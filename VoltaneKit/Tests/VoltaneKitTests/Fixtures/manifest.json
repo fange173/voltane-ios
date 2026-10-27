@@ -1,0 +1,1060 @@
+{
+  "api_version": 1,
+  "generated_on": "2026-10-27",
+  "note": "演示数据按生成当天的日期铺开，解码测试不要依赖具体数值；token 已替换成占位符。",
+  "files": [
+    {
+      "file": "admin_system__default.json",
+      "method": "GET",
+      "path": "/api/admin/system",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "admin_users__all.json",
+      "method": "GET",
+      "path": "/api/admin/users",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "auth_login__ios.json",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "params": {
+        "client": "ios"
+      },
+      "status": 200
+    },
+    {
+      "file": "auth_login__web_no_token.json",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "params": {
+        "client": "web"
+      },
+      "status": 200
+    },
+    {
+      "file": "auth_logout_all__ok.json",
+      "method": "POST",
+      "path": "/api/auth/logout-all",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "auth_logout_all__token_revoked.json",
+      "method": "GET",
+      "path": "/api/auth/me",
+      "params": {},
+      "status": 401
+    },
+    {
+      "file": "auth_me__admin.json",
+      "method": "GET",
+      "path": "/api/auth/me",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "auth_refresh__ok.json",
+      "method": "POST",
+      "path": "/api/auth/refresh",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "error__400_bev_fuel.json",
+      "method": "POST",
+      "path": "/api/records",
+      "params": {},
+      "status": 400
+    },
+    {
+      "file": "error__401.json",
+      "method": "GET",
+      "path": "/api/auth/me",
+      "params": {},
+      "status": 401
+    },
+    {
+      "file": "error__401_bad_bearer.json",
+      "method": "GET",
+      "path": "/api/auth/me",
+      "params": {},
+      "status": 401
+    },
+    {
+      "file": "error__403_not_admin.json",
+      "method": "GET",
+      "path": "/api/admin/users",
+      "params": {},
+      "status": 403
+    },
+    {
+      "file": "error__404_no_access.json",
+      "method": "GET",
+      "path": "/api/vehicles/1",
+      "params": {},
+      "status": 404
+    },
+    {
+      "file": "error__409_conflict.json",
+      "method": "PUT",
+      "path": "/api/records/97",
+      "params": {},
+      "status": 409
+    },
+    {
+      "file": "error__409_duplicate.json",
+      "method": "POST",
+      "path": "/api/records",
+      "params": {},
+      "status": 409
+    },
+    {
+      "file": "error__422_bad_value.json",
+      "method": "POST",
+      "path": "/api/records",
+      "params": {},
+      "status": 422
+    },
+    {
+      "file": "error__422_missing_param.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {},
+      "status": 422
+    },
+    {
+      "file": "error__429_login_locked.json",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "params": {},
+      "status": 429
+    },
+    {
+      "file": "expenses_eid__phev.json",
+      "method": "GET",
+      "path": "/api/expenses/{eid}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "expenses_eid__with_sub_items.json",
+      "method": "GET",
+      "path": "/api/expenses/{eid}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "export__phev_csv.csv",
+      "method": "GET",
+      "path": "/api/export",
+      "params": {
+        "vehicle_id": 1,
+        "format": "csv"
+      },
+      "status": 200
+    },
+    {
+      "file": "export__phev_expenses_csv.csv",
+      "method": "GET",
+      "path": "/api/export",
+      "params": {
+        "vehicle_id": 1,
+        "format": "expenses_csv"
+      },
+      "status": 200
+    },
+    {
+      "file": "export__phev_json.json",
+      "method": "GET",
+      "path": "/api/export",
+      "params": {
+        "vehicle_id": 1,
+        "format": "json"
+      },
+      "status": 200
+    },
+    {
+      "file": "health__after.json",
+      "method": "GET",
+      "path": "/api/health",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "health__ok.json",
+      "method": "GET",
+      "path": "/api/health",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "invites_code__viewer.json",
+      "method": "GET",
+      "path": "/api/invites/{code}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "places__all.json",
+      "method": "GET",
+      "path": "/api/places",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "places__phev.json",
+      "method": "GET",
+      "path": "/api/places",
+      "params": {
+        "vehicle_id": 1
+      },
+      "status": 200
+    },
+    {
+      "file": "places__sparse.json",
+      "method": "GET",
+      "path": "/api/places",
+      "params": {
+        "vehicle_id": 3
+      },
+      "status": 200
+    },
+    {
+      "file": "records__bev_default.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 2,
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_anomaly.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "anomaly": "true",
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_dates.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "date_from": "2026-09-27",
+        "date_to": "2026-10-27",
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_default.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_in_progress.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "limit": 5
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_kind-charge.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "kind": "charge",
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_kind-estimated.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "kind": "estimated",
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_kind-expense.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "kind": "expense",
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_kind-fuel.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "kind": "fuel",
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_kind-snapshot.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "kind": "snapshot",
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_mine.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "mine": "true",
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_page2.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "limit": 20,
+        "before": "2026-09-23T22:30"
+      },
+      "status": 200
+    },
+    {
+      "file": "records__phev_search.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 1,
+        "q": "demo",
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records__sparse_default.json",
+      "method": "GET",
+      "path": "/api/records",
+      "params": {
+        "vehicle_id": 3,
+        "limit": 20
+      },
+      "status": 200
+    },
+    {
+      "file": "records_create__fuel_ok.json",
+      "method": "POST",
+      "path": "/api/records",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "records_create__fuel_replayed.json",
+      "method": "POST",
+      "path": "/api/records",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "records_prefill__bev_charge.json",
+      "method": "GET",
+      "path": "/api/records/prefill",
+      "params": {
+        "vehicle_id": 2,
+        "kind": "charge"
+      },
+      "status": 200
+    },
+    {
+      "file": "records_prefill__phev_charge.json",
+      "method": "GET",
+      "path": "/api/records/prefill",
+      "params": {
+        "vehicle_id": 1,
+        "kind": "charge"
+      },
+      "status": 200
+    },
+    {
+      "file": "records_prefill__phev_fuel.json",
+      "method": "GET",
+      "path": "/api/records/prefill",
+      "params": {
+        "vehicle_id": 1,
+        "kind": "fuel"
+      },
+      "status": 200
+    },
+    {
+      "file": "records_prefill__phev_snapshot.json",
+      "method": "GET",
+      "path": "/api/records/prefill",
+      "params": {
+        "vehicle_id": 1,
+        "kind": "snapshot"
+      },
+      "status": 200
+    },
+    {
+      "file": "records_prefill__sparse_charge.json",
+      "method": "GET",
+      "path": "/api/records/prefill",
+      "params": {
+        "vehicle_id": 3,
+        "kind": "charge"
+      },
+      "status": 200
+    },
+    {
+      "file": "records_rid__charge.json",
+      "method": "GET",
+      "path": "/api/records/{rid}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "records_rid__delivery.json",
+      "method": "GET",
+      "path": "/api/records/{rid}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "records_rid__fuel.json",
+      "method": "GET",
+      "path": "/api/records/{rid}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "records_rid__in_progress.json",
+      "method": "GET",
+      "path": "/api/records/{rid}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "records_rid__snapshot.json",
+      "method": "GET",
+      "path": "/api/records/{rid}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "records_rid__sparse_charge.json",
+      "method": "GET",
+      "path": "/api/records/{rid}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "reminders__all.json",
+      "method": "GET",
+      "path": "/api/reminders",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "reminders__phev.json",
+      "method": "GET",
+      "path": "/api/reminders",
+      "params": {
+        "vehicle_id": 1
+      },
+      "status": 200
+    },
+    {
+      "file": "reminders__sparse.json",
+      "method": "GET",
+      "path": "/api/reminders",
+      "params": {
+        "vehicle_id": 3
+      },
+      "status": 200
+    },
+    {
+      "file": "reminders_due__all.json",
+      "method": "GET",
+      "path": "/api/reminders/due",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "reminders_templates__all.json",
+      "method": "GET",
+      "path": "/api/reminders/templates",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "stats_calendar__bev_current.json",
+      "method": "GET",
+      "path": "/api/stats/calendar",
+      "params": {
+        "vehicle_id": 2,
+        "month": "2026-10"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_calendar__phev_current.json",
+      "method": "GET",
+      "path": "/api/stats/calendar",
+      "params": {
+        "vehicle_id": 1,
+        "month": "2026-10"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_calendar__phev_previous.json",
+      "method": "GET",
+      "path": "/api/stats/calendar",
+      "params": {
+        "vehicle_id": 1,
+        "month": "2026-09"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_calendar__sparse_current.json",
+      "method": "GET",
+      "path": "/api/stats/calendar",
+      "params": {
+        "vehicle_id": 3,
+        "month": "2026-10"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_cost__all_vehicles.json",
+      "method": "GET",
+      "path": "/api/stats/cost",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "stats_cost__bev.json",
+      "method": "GET",
+      "path": "/api/stats/cost",
+      "params": {
+        "vehicle_id": 2
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_cost__phev.json",
+      "method": "GET",
+      "path": "/api/stats/cost",
+      "params": {
+        "vehicle_id": 1
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_cost__phev_range.json",
+      "method": "GET",
+      "path": "/api/stats/cost",
+      "params": {
+        "vehicle_id": 1,
+        "date_from": "2026-08-28",
+        "date_to": "2026-10-27"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_cost__sparse.json",
+      "method": "GET",
+      "path": "/api/stats/cost",
+      "params": {
+        "vehicle_id": 3
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_energy__bev.json",
+      "method": "GET",
+      "path": "/api/stats/energy",
+      "params": {
+        "vehicle_id": 2
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_energy__phev.json",
+      "method": "GET",
+      "path": "/api/stats/energy",
+      "params": {
+        "vehicle_id": 1
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_energy__phev_range.json",
+      "method": "GET",
+      "path": "/api/stats/energy",
+      "params": {
+        "vehicle_id": 1,
+        "date_from": "2026-08-28",
+        "date_to": "2026-10-27"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_energy__sparse.json",
+      "method": "GET",
+      "path": "/api/stats/energy",
+      "params": {
+        "vehicle_id": 3
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_mileage__bev.json",
+      "method": "GET",
+      "path": "/api/stats/mileage",
+      "params": {
+        "vehicle_id": 2
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_mileage__phev.json",
+      "method": "GET",
+      "path": "/api/stats/mileage",
+      "params": {
+        "vehicle_id": 1
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_mileage__sparse.json",
+      "method": "GET",
+      "path": "/api/stats/mileage",
+      "params": {
+        "vehicle_id": 3
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_monthly-report__bev_current.json",
+      "method": "GET",
+      "path": "/api/stats/monthly-report",
+      "params": {
+        "vehicle_id": 2,
+        "month": "2026-10"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_monthly-report__phev_current.json",
+      "method": "GET",
+      "path": "/api/stats/monthly-report",
+      "params": {
+        "vehicle_id": 1,
+        "month": "2026-10"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_monthly-report__phev_previous.json",
+      "method": "GET",
+      "path": "/api/stats/monthly-report",
+      "params": {
+        "vehicle_id": 1,
+        "month": "2026-09"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_monthly-report__sparse_current.json",
+      "method": "GET",
+      "path": "/api/stats/monthly-report",
+      "params": {
+        "vehicle_id": 3,
+        "month": "2026-10"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_overview__bev_month.json",
+      "method": "GET",
+      "path": "/api/stats/overview",
+      "params": {
+        "vehicle_id": 2,
+        "range": "month"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_overview__phev_30d.json",
+      "method": "GET",
+      "path": "/api/stats/overview",
+      "params": {
+        "vehicle_id": 1,
+        "range": "30d"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_overview__phev_all.json",
+      "method": "GET",
+      "path": "/api/stats/overview",
+      "params": {
+        "vehicle_id": 1,
+        "range": "all"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_overview__phev_in_progress.json",
+      "method": "GET",
+      "path": "/api/stats/overview",
+      "params": {
+        "vehicle_id": 1,
+        "range": "month"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_overview__phev_month.json",
+      "method": "GET",
+      "path": "/api/stats/overview",
+      "params": {
+        "vehicle_id": 1,
+        "range": "month"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_overview__phev_year.json",
+      "method": "GET",
+      "path": "/api/stats/overview",
+      "params": {
+        "vehicle_id": 1,
+        "range": "year"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_overview__sparse_month.json",
+      "method": "GET",
+      "path": "/api/stats/overview",
+      "params": {
+        "vehicle_id": 3,
+        "range": "month"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_segments__bev_elec.json",
+      "method": "GET",
+      "path": "/api/stats/segments",
+      "params": {
+        "vehicle_id": 2,
+        "energy": "elec"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_segments__phev_combined.json",
+      "method": "GET",
+      "path": "/api/stats/segments",
+      "params": {
+        "vehicle_id": 1,
+        "energy": "combined"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_segments__phev_elec.json",
+      "method": "GET",
+      "path": "/api/stats/segments",
+      "params": {
+        "vehicle_id": 1,
+        "energy": "elec"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_segments__phev_fuel.json",
+      "method": "GET",
+      "path": "/api/stats/segments",
+      "params": {
+        "vehicle_id": 1,
+        "energy": "fuel"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_segments__sparse_elec.json",
+      "method": "GET",
+      "path": "/api/stats/segments",
+      "params": {
+        "vehicle_id": 3,
+        "energy": "elec"
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_yearly-report__bev_current.json",
+      "method": "GET",
+      "path": "/api/stats/yearly-report",
+      "params": {
+        "vehicle_id": 2,
+        "year": 2026
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_yearly-report__phev_current.json",
+      "method": "GET",
+      "path": "/api/stats/yearly-report",
+      "params": {
+        "vehicle_id": 1,
+        "year": 2026
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_yearly-report__phev_last_year.json",
+      "method": "GET",
+      "path": "/api/stats/yearly-report",
+      "params": {
+        "vehicle_id": 1,
+        "year": 2025
+      },
+      "status": 200
+    },
+    {
+      "file": "stats_yearly-report__sparse_current.json",
+      "method": "GET",
+      "path": "/api/stats/yearly-report",
+      "params": {
+        "vehicle_id": 3,
+        "year": 2026
+      },
+      "status": 200
+    },
+    {
+      "file": "summaries__bev.json",
+      "method": "GET",
+      "path": "/api/summaries",
+      "params": {
+        "vehicle_id": 2
+      },
+      "status": 200
+    },
+    {
+      "file": "summaries__phev.json",
+      "method": "GET",
+      "path": "/api/summaries",
+      "params": {
+        "vehicle_id": 1
+      },
+      "status": 200
+    },
+    {
+      "file": "trash__phev.json",
+      "method": "GET",
+      "path": "/api/trash",
+      "params": {
+        "vehicle_id": 1
+      },
+      "status": 200
+    },
+    {
+      "file": "vehicles__all.json",
+      "method": "GET",
+      "path": "/api/vehicles",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid__bev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid__phev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid__sparse.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_activity__bev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/activity",
+      "params": {
+        "limit": 15
+      },
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_activity__phev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/activity",
+      "params": {
+        "limit": 15
+      },
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_activity__sparse.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/activity",
+      "params": {
+        "limit": 15
+      },
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_calibration__bev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/calibration",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_calibration__phev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/calibration",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_calibration__sparse.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/calibration",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_health__bev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/health",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_health__phev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/health",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_health__sparse.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/health",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_invites__bev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/invites",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_invites__phev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/invites",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_invites__sparse.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/invites",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_members__bev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/members",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_members__phev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/members",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_members__sparse.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/members",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_odometer__bev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/odometer",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_odometer__phev.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/odometer",
+      "params": {},
+      "status": 200
+    },
+    {
+      "file": "vehicles_vid_odometer__sparse.json",
+      "method": "GET",
+      "path": "/api/vehicles/{vid}/odometer",
+      "params": {},
+      "status": 200
+    }
+  ]
+}

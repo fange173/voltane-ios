@@ -1,0 +1,274 @@
+{
+  "best_month": null,
+  "months": [
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-01",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-02",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-03",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-04",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-05",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-06",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-07",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-08",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-09",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-10",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-11",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2026-12",
+      "total_cents": 0
+    }
+  ],
+  "report": {
+    "categories": {},
+    "combined": null,
+    "elec": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "elec_cents": 0,
+    "elec_count": 2,
+    "elec_kwh": 0.0,
+    "energy_cents": 0,
+    "energy_cost_per_km": null,
+    "from": "2026-01-01",
+    "fuel": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "fuel_cents": 0,
+    "fuel_count": 0,
+    "fuel_l": 0.0,
+    "home_share": null,
+    "mileage": 0.0,
+    "other_cents": 0,
+    "summary_cents": 0,
+    "to": "2026-12-31",
+    "total_cents": 0,
+    "total_cost_per_km": null
+  },
+  "top_item": {
+    "amount_cents": null,
+    "charge_kwh": null,
+    "charge_minutes": null,
+    "charge_to_limit": false,
+    "charge_type": null,
+    "charge_unit_price": null,
+    "client_id": null,
+    "created_at": "2026-10-27T12:54",
+    "created_by": null,
+    "deleted_at": null,
+    "energy_fee_cents": null,
+    "estimated_fields": [],
+    "extra_fee_cents": null,
+    "fuel_grade": null,
+    "fuel_is_full": false,
+    "fuel_level_after_pct": null,
+    "fuel_level_before_pct": null,
+    "fuel_liters": null,
+    "fuel_unit_price": null,
+    "id": 93,
+    "kind": "snapshot",
+    "lat": null,
+    "lng": null,
+    "missed_before": false,
+    "note": "[demo]",
+    "occurred_at": "2026-10-21T08:00",
+    "odometer_estimated": false,
+    "odometer_km": 23400.0,
+    "place_id": null,
+    "place_name": null,
+    "service_fee_cents": null,
+    "snapshot_tag": "ledger_start",
+    "soc_after_pct": null,
+    "soc_before_pct": 55.0,
+    "source": "manual",
+    "status": "done",
+    "type": "record",
+    "updated_at": "2026-10-27T12:54",
+    "updated_by": null,
+    "vehicle_id": 3,
+    "version": 1
+  },
+  "year": 2026,
+  "years": [
+    2026
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "daily_km": 53.4,
+  "in_progress": [],
+  "k": 0.8196,
+  "k_source": "learned",
+  "last": {
+    "amount_cents": 2655,
+    "charge_kwh": 59.0,
+    "charge_minutes": null,
+    "charge_to_limit": false,
+    "charge_type": "home",
+    "charge_unit_price": 0.45,
+    "client_id": null,
+    "created_at": "2026-10-27T12:54",
+    "created_by": null,
+    "deleted_at": null,
+    "energy_fee_cents": null,
+    "estimated_fields": [],
+    "extra_fee_cents": null,
+    "fuel_grade": null,
+    "fuel_is_full": false,
+    "fuel_level_after_pct": null,
+    "fuel_level_before_pct": null,
+    "fuel_liters": null,
+    "fuel_unit_price": null,
+    "id": 90,
+    "kind": "charge",
+    "lat": null,
+    "lng": null,
+    "missed_before": false,
+    "note": "[demo]",
+    "occurred_at": "2026-10-24T21:00",
+    "odometer_estimated": false,
+    "odometer_km": 6747.0,
+    "place_id": null,
+    "place_name": "小区充电桩",
+    "service_fee_cents": null,
+    "snapshot_tag": null,
+    "soc_after_pct": 90.0,
+    "soc_before_pct": 18.0,
+    "source": "manual",
+    "status": "done",
+    "updated_at": "2026-10-27T12:54",
+    "updated_by": null,
+    "vehicle_id": 2,
+    "version": 1
+  },
+  "last_fuel_pct": null,
+  "last_odo": 6747.0,
+  "last_odo_ts": "2026-10-26T16:00",
+  "last_soc": 82,
+  "odo_points": [
+    [
+      "2026-08-13T08:00",
+      3000.0
+    ],
+    [
+      "2026-08-18T21:00",
+      3278.0
+    ],
+    [
+      "2026-08-23T10:00",
+      3435.0
+    ],
+    [
+      "2026-08-24T16:00",
+      3435.0
+    ],
+    [
+      "2026-08-25T21:00",
+      3506.0
+    ],
+    [
+      "2026-08-29T10:00",
+      3652.0
+    ],
+    [
+      "2026-08-30T16:00",
+      3652.0
+    ],
+    [
+      "2026-08-30T21:00",
+      3802.0
+    ],
+    [
+      "2026-09-06T10:00",
+      4108.0
+    ],
+    [
+      "2026-09-06T21:00",
+      4108.0
+    ],
+    [
+      "2026-09-07T16:00",
+      4108.0
+    ],
+    [
+      "2026-09-13T21:00",
+      4497.0
+    ],
+    [
+      "2026-09-19T10:00",
+      4747.0
+    ],
+    [
+      "2026-09-19T21:00",
+      4747.0
+    ],
+    [
+      "2026-09-20T16:00",
+      4747.0
+    ],
+    [
+      "2026-09-24T21:00",
+      5052.0
+    ],
+    [
+      "2026-09-27T10:00",
+      5265.0
+    ],
+    [
+      "2026-09-28T16:00",
+      5265.0
+    ],
+    [
+      "2026-09-29T21:00",
+      5376.0
+    ],
+    [
+      "2026-10-04T21:00",
+      5776.0
+    ],
+    [
+      "2026-10-10T10:00",
+      5992.0
+    ],
+    [
+      "2026-10-11T10:00",
+      5992.0
+    ],
+    [
+      "2026-10-11T16:00",
+      5992.0
+    ],
+    [
+      "2026-10-12T16:00",
+      5992.0
+    ],
+    [
+      "2026-10-12T21:00",
+      6043.0
+    ],
+    [
+      "2026-10-17T21:00",
+      6390.0
+    ],
+    [
+      "2026-10-18T10:00",
+      6390.0
+    ],
+    [
+      "2026-10-19T16:00",
+      6390.0
+    ],
+    [
+      "2026-10-24T21:00",
+      6747.0
+    ],
+    [
+      "2026-10-25T10:00",
+      6747.0
+    ],
+    [
+      "2026-10-26T16:00",
+      6747.0
+    ]
+  ],
+  "places": [],
+  "recent_notes": [
+    "[demo] 哨兵",
+    "[demo]"
+  ]
+}

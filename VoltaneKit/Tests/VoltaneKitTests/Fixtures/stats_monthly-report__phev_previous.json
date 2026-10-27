@@ -1,0 +1,99 @@
+{
+  "month": "2026-09",
+  "prev": {
+    "categories": {
+      "parking": 500,
+      "wash": 3500
+    },
+    "combined": null,
+    "elec": {
+      "drive": {
+        "amount": 215.35,
+        "distance": 1958.0,
+        "err100": 0.31,
+        "per100": 11.0,
+        "quality": "A"
+      },
+      "idle": {
+        "amount": 1.2,
+        "count": 1,
+        "days": 1.4,
+        "per_day": 0.84,
+        "share": 0.006
+      },
+      "overall": {
+        "amount": 216.55,
+        "distance": 1958.0,
+        "err100": 0.33,
+        "per100": 11.06,
+        "quality": "A"
+      }
+    },
+    "elec_cents": 9381,
+    "elec_count": 14,
+    "elec_kwh": 217.0,
+    "energy_cents": 9381,
+    "energy_cost_per_km": 0.049,
+    "from": "2026-08-01",
+    "fuel": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "fuel_cents": 0,
+    "fuel_count": 0,
+    "fuel_l": 0.0,
+    "home_share": 0.853,
+    "mileage": 1915.4,
+    "other_cents": 4000,
+    "summary_cents": 0,
+    "to": "2026-08-31",
+    "total_cents": 13381,
+    "total_cost_per_km": 0.07
+  },
+  "report": {
+    "categories": {
+      "parking": 2000
+    },
+    "combined": null,
+    "elec": {
+      "drive": {
+        "amount": 175.27,
+        "distance": 1185.0,
+        "err100": 0.4,
+        "per100": 14.79,
+        "quality": "A"
+      },
+      "idle": null,
+      "overall": {
+        "amount": 175.27,
+        "distance": 1185.0,
+        "err100": 0.4,
+        "per100": 14.79,
+        "quality": "A"
+      }
+    },
+    "elec_cents": 7668,
+    "elec_count": 12,
+    "elec_kwh": 176.4,
+    "energy_cents": 7668,
+    "energy_cost_per_km": 0.065,
+    "from": "2026-09-01",
+    "fuel": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "fuel_cents": 0,
+    "fuel_count": 0,
+    "fuel_l": 0.0,
+    "home_share": 0.85,
+    "mileage": 1181.1,
+    "other_cents": 2000,
+    "summary_cents": 0,
+    "to": "2026-09-30",
+    "total_cents": 9668,
+    "total_cost_per_km": 0.082
+  },
+  "sentence": "比上月少跑了 38%，每公里能源成本升到 ¥0.07，家充占比 85%。"
+}

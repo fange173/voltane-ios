@@ -1,0 +1,11 @@
+{
+  "coverage": {
+    "elec": 1.0,
+    "fuel": 0.724
+  },
+  "issues": [],
+  "k": 0.1994,
+  "k_source": "learned",
+  "latest_odo": 16037.0,
+  "ledger_km": 6237.0
+}

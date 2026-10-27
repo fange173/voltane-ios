@@ -1,0 +1,10 @@
+{
+  "allow_signup": false,
+  "backup_keep": 14,
+  "backups": [],
+  "db_size": 147456,
+  "orphan_vehicles": [],
+  "records": 95,
+  "users": 2,
+  "vehicles": 3
+}

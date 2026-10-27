@@ -1,0 +1,58 @@
+{
+  "detail": {
+    "code": "conflict",
+    "message": "这条记录刚被 管理员 修改过，已显示最新内容",
+    "record": {
+      "amount_cents": null,
+      "charge_kwh": null,
+      "charge_minutes": null,
+      "charge_to_limit": false,
+      "charge_type": null,
+      "charge_unit_price": null,
+      "client_id": "fixture-save-1",
+      "created_at": "2026-10-27T12:54",
+      "created_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "deleted_at": null,
+      "energy_fee_cents": null,
+      "estimated_fields": [],
+      "extra_fee_cents": null,
+      "fuel_grade": null,
+      "fuel_is_full": false,
+      "fuel_level_after_pct": null,
+      "fuel_level_before_pct": null,
+      "fuel_liters": 20.0,
+      "fuel_unit_price": null,
+      "id": 97,
+      "kind": "fuel",
+      "lat": null,
+      "lng": null,
+      "missed_before": false,
+      "note": "",
+      "occurred_at": "2026-10-27T09:00",
+      "odometer_estimated": false,
+      "odometer_km": 100101.0,
+      "place_id": null,
+      "place_name": null,
+      "service_fee_cents": null,
+      "snapshot_tag": null,
+      "soc_after_pct": null,
+      "soc_before_pct": null,
+      "source": "manual",
+      "status": "done",
+      "updated_at": "2026-10-27T12:54",
+      "updated_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "vehicle_id": 1,
+      "version": 2
+    }
+  }
+}

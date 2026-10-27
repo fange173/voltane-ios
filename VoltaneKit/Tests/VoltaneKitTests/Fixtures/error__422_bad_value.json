@@ -1,0 +1,28 @@
+{
+  "detail": [
+    {
+      "ctx": {
+        "error": "invalid character in year"
+      },
+      "input": "not-a-date",
+      "loc": [
+        "body",
+        "occurred_at"
+      ],
+      "msg": "Input should be a valid datetime or date, invalid character in year",
+      "type": "datetime_from_date_parsing"
+    },
+    {
+      "ctx": {
+        "ge": 0.0
+      },
+      "input": -5,
+      "loc": [
+        "body",
+        "odometer_km"
+      ],
+      "msg": "Input should be greater than or equal to 0",
+      "type": "greater_than_equal"
+    }
+  ]
+}

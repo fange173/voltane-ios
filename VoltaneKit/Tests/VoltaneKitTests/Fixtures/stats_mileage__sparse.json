@@ -1,0 +1,19 @@
+{
+  "daily_avg": null,
+  "latest_odo": 23400.0,
+  "months": [
+    {
+      "days": 31,
+      "km": 0.0,
+      "last_year": null,
+      "month": "2026-10"
+    }
+  ],
+  "points": [
+    {
+      "odo": 23400.0,
+      "ts": "2026-10-21T08:00"
+    }
+  ],
+  "recent_daily": null
+}

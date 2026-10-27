@@ -1,0 +1,655 @@
+{
+  "categories": [
+    {
+      "cents": 386000,
+      "count": 1,
+      "key": "insurance",
+      "label": "保险",
+      "share": 0.553
+    },
+    {
+      "cents": 126934,
+      "count": 66,
+      "key": "elec",
+      "label": "充电",
+      "share": 0.182
+    },
+    {
+      "cents": 110020,
+      "count": 3,
+      "key": "fuel",
+      "label": "加油",
+      "share": 0.158
+    },
+    {
+      "cents": 48000,
+      "count": 1,
+      "key": "maintenance",
+      "label": "保养",
+      "share": 0.069
+    },
+    {
+      "cents": 12900,
+      "count": 1,
+      "key": "accessory",
+      "label": "用品/改装",
+      "share": 0.018
+    },
+    {
+      "cents": 8500,
+      "count": 1,
+      "key": "toll",
+      "label": "通行费",
+      "share": 0.012
+    },
+    {
+      "cents": 3500,
+      "count": 1,
+      "key": "wash",
+      "label": "洗车美容",
+      "share": 0.005
+    },
+    {
+      "cents": 2000,
+      "count": 1,
+      "key": "parking",
+      "label": "停车",
+      "share": 0.003
+    }
+  ],
+  "cost_per_km": 0.353,
+  "from": "2025-12-31",
+  "mileage": 19772.0,
+  "months": [
+    {
+      "cost_per_km": 120.147,
+      "cumulative": 408500,
+      "elec": 0,
+      "fuel": 22500,
+      "insurance": 386000,
+      "maintenance": 0,
+      "mileage": 34.0,
+      "month": "2025-12",
+      "other": 0,
+      "summary": 0,
+      "total": 408500
+    },
+    {
+      "cost_per_km": 0.078,
+      "cumulative": 421576,
+      "elec": 7880,
+      "fuel": 5196,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 1686.1,
+      "month": "2026-01",
+      "other": 0,
+      "summary": 13075,
+      "total": 13076
+    },
+    {
+      "cost_per_km": 0.078,
+      "cumulative": 433386,
+      "elec": 7117,
+      "fuel": 4693,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 1522.9,
+      "month": "2026-02",
+      "other": 0,
+      "summary": 11810,
+      "total": 11810
+    },
+    {
+      "cost_per_km": 0.078,
+      "cumulative": 446462,
+      "elec": 7880,
+      "fuel": 5196,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 1686.1,
+      "month": "2026-03",
+      "other": 0,
+      "summary": 13075,
+      "total": 13076
+    },
+    {
+      "cost_per_km": 0.078,
+      "cumulative": 459116,
+      "elec": 7626,
+      "fuel": 5028,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 1631.7,
+      "month": "2026-04",
+      "other": 0,
+      "summary": 12654,
+      "total": 12654
+    },
+    {
+      "cost_per_km": 0.078,
+      "cumulative": 472192,
+      "elec": 7880,
+      "fuel": 5196,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 1686.1,
+      "month": "2026-05",
+      "other": 0,
+      "summary": 13075,
+      "total": 13076
+    },
+    {
+      "cost_per_km": 0.077,
+      "cumulative": 484428,
+      "elec": 7543,
+      "fuel": 4693,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 1590.5,
+      "month": "2026-06",
+      "other": 0,
+      "summary": 11810,
+      "total": 12236
+    },
+    {
+      "cost_per_km": 0.521,
+      "cumulative": 576069,
+      "elec": 14103,
+      "fuel": 28538,
+      "insurance": 0,
+      "maintenance": 48000,
+      "mileage": 1758.4,
+      "month": "2026-07",
+      "other": 1000,
+      "summary": 0,
+      "total": 91641
+    },
+    {
+      "cost_per_km": 0.089,
+      "cumulative": 600650,
+      "elec": 20581,
+      "fuel": 0,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 2770.0,
+      "month": "2026-08",
+      "other": 4000,
+      "summary": 0,
+      "total": 24581
+    },
+    {
+      "cost_per_km": 0.114,
+      "cumulative": 632418,
+      "elec": 29768,
+      "fuel": 0,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 2792.5,
+      "month": "2026-09",
+      "other": 2000,
+      "summary": 0,
+      "total": 31768
+    },
+    {
+      "cost_per_km": 0.256,
+      "cumulative": 699356,
+      "elec": 16556,
+      "fuel": 28982,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 2613.6,
+      "month": "2026-10",
+      "other": 21400,
+      "summary": 0,
+      "total": 66938
+    }
+  ],
+  "places": [
+    {
+      "avg_price": 0.3,
+      "cents": 18570,
+      "count": 41,
+      "kind": "charge",
+      "name": "家里车位"
+    },
+    {
+      "avg_price": 1.2,
+      "cents": 19380,
+      "count": 11,
+      "kind": "charge",
+      "name": "公司地库充电桩"
+    },
+    {
+      "avg_price": 0.45,
+      "cents": 21916,
+      "count": 9,
+      "kind": "charge",
+      "name": "小区充电桩"
+    },
+    {
+      "avg_price": 1.6,
+      "cents": 21568,
+      "count": 3,
+      "kind": "charge",
+      "name": "超充站"
+    },
+    {
+      "avg_price": 7.555,
+      "cents": 57520,
+      "count": 2,
+      "kind": "fuel",
+      "name": "中石化 望京站"
+    }
+  ],
+  "prices": {
+    "elec": [
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-06-30T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "public_ac",
+        "price": 1.2,
+        "ts": "2026-07-02T13:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-07-06T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-07-08T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "public_ac",
+        "price": 1.2,
+        "ts": "2026-07-10T13:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-07-11T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-07-14T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-07-16T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-07-18T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-07-21T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "public_ac",
+        "price": 1.2,
+        "ts": "2026-07-23T13:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-07-25T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "public_ac",
+        "price": 1.2,
+        "ts": "2026-07-26T13:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "public_ac",
+        "price": 1.2,
+        "ts": "2026-07-28T13:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "public_ac",
+        "price": 1.2,
+        "ts": "2026-07-30T13:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-02T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-04T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-06T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-08T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "public_ac",
+        "price": 1.2,
+        "ts": "2026-08-09T13:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-11T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-13T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-16T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-18T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-20T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-22T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-25T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-08-27T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "public_ac",
+        "price": 1.2,
+        "ts": "2026-08-30T13:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-09-01T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "public_ac",
+        "price": 1.2,
+        "ts": "2026-09-03T13:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-09-07T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-09-09T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-09-11T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-09-15T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-09-17T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-09-21T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-09-23T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "public_ac",
+        "price": 1.2,
+        "ts": "2026-09-25T13:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-09-27T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-09-29T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-10-01T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-10-04T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-10-06T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-10-08T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-10-10T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-10-13T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-10-15T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-10-18T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "public_ac",
+        "price": 1.2,
+        "ts": "2026-10-20T13:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-10-22T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "home",
+        "price": 0.3,
+        "ts": "2026-10-24T22:30",
+        "vehicle_id": 1
+      },
+      {
+        "group": "dc",
+        "price": 1.6,
+        "ts": "2026-08-18T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-08-25T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-08-30T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-09-06T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "dc",
+        "price": 1.6,
+        "ts": "2026-09-13T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "dc",
+        "price": 1.6,
+        "ts": "2026-09-19T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-09-24T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-09-29T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-10-04T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-10-12T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-10-17T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-10-24T21:00",
+        "vehicle_id": 2
+      }
+    ],
+    "fuel": [
+      {
+        "group": "92",
+        "price": 7.5,
+        "ts": "2025-12-31T09:01",
+        "vehicle_id": 1
+      },
+      {
+        "group": "92",
+        "price": 7.59,
+        "ts": "2026-07-25T19:10",
+        "vehicle_id": 1
+      },
+      {
+        "group": "92",
+        "price": 7.52,
+        "ts": "2026-10-18T19:10",
+        "vehicle_id": 1
+      }
+    ]
+  },
+  "to": "2026-10-27",
+  "total_cents": 697854
+}

@@ -1,0 +1,6089 @@
+{
+ "vehicles": {
+  "phev": {},
+  "phevL": {
+   "fuel_gauge_mode": "liters"
+  },
+  "phevB": {
+   "fuel_gauge_mode": "bars",
+   "fuel_gauge_bars": 8
+  },
+  "bev": {
+   "energy_type": "bev",
+   "has_fuel": false,
+   "has_elec": true,
+   "tank_capacity_l": null,
+   "battery_usable_kwh": 75,
+   "charge_limit_pct": 80
+  },
+  "ice": {
+   "energy_type": "ice",
+   "has_fuel": true,
+   "has_elec": false,
+   "tank_capacity_l": 50,
+   "battery_usable_kwh": null
+  }
+ },
+ "prefill": {
+  "k": 0.2,
+  "k_source": "learned",
+  "last": null,
+  "last_odo": 10000,
+  "last_odo_ts": "2026-10-20T08:00",
+  "odo_points": [
+   [
+    "2026-10-01T08:00",
+    9500
+   ],
+   [
+    "2026-10-20T08:00",
+    10000
+   ]
+  ],
+  "last_soc": 50,
+  "last_fuel_pct": 60,
+  "places": [
+   {
+    "id": 11,
+    "name": "家里车位",
+    "kind": "home_charger",
+    "tou_tariff": [
+     {
+      "from": "22:00",
+      "to": "08:00",
+      "price": 0.3
+     },
+     {
+      "from": "08:00",
+      "to": "22:00",
+      "price": 0.62
+     }
+    ],
+    "default_charge_type": "home",
+    "default_fuel_grade": null,
+    "last_unit_price": null,
+    "lat": null,
+    "lng": null,
+    "use_count": 5,
+    "is_hidden": false
+   },
+   {
+    "id": 12,
+    "name": "中石化",
+    "kind": "gas_station",
+    "tou_tariff": [],
+    "default_charge_type": null,
+    "default_fuel_grade": "95",
+    "last_unit_price": 7.62,
+    "lat": null,
+    "lng": null,
+    "use_count": 3,
+    "is_hidden": false
+   },
+   {
+    "id": 13,
+    "name": "公司桩",
+    "kind": "charge_station",
+    "tou_tariff": [],
+    "default_charge_type": "dc",
+    "default_fuel_grade": null,
+    "last_unit_price": 1.5,
+    "lat": null,
+    "lng": null,
+    "use_count": 2,
+    "is_hidden": false
+   }
+  ],
+  "recent_notes": [],
+  "in_progress": [],
+  "daily_km": 50
+ },
+ "cases": [
+  {
+   "name": "f_qty_price_full",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ],
+    [
+     "type",
+     "fuel_unit_price",
+     "7.5"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "150",
+      "a"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 15000,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "f_qty_price_notfull",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "check",
+     "fuel_is_full",
+     false
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ],
+    [
+     "type",
+     "fuel_unit_price",
+     "7.5"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "150",
+      "a"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 15000,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "f_qty_amount",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "check",
+     "fuel_is_full",
+     false
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "30"
+    ],
+    [
+     "type",
+     "amount",
+     "225"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "30",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "a"
+     ],
+     "amount": [
+      "225",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 22500,
+     "fuel_grade": "92",
+     "fuel_liters": 30,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "f_price_amount",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "check",
+     "fuel_is_full",
+     false
+    ],
+    [
+     "type",
+     "fuel_unit_price",
+     "7.62"
+    ],
+    [
+     "type",
+     "amount",
+     "300"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "39.37",
+      "a"
+     ],
+     "fuel_unit_price": [
+      "7.62",
+      "u"
+     ],
+     "amount": [
+      "300",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 30000,
+     "fuel_grade": "92",
+     "fuel_liters": 39.37,
+     "fuel_unit_price": 7.62,
+     "fuel_is_full": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "f_amount_expr",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "check",
+     "fuel_is_full",
+     false
+    ],
+    [
+     "type",
+     "fuel_unit_price",
+     "7.5"
+    ],
+    [
+     "type",
+     "amount",
+     "200+15"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "28.67",
+      "a"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "200+15",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 21500,
+     "fuel_grade": "92",
+     "fuel_liters": 28.67,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "f_full_before",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_level_before_pct",
+     "30"
+    ],
+    [
+     "type",
+     "fuel_unit_price",
+     "7.5"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "33.6",
+      "a"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "252",
+      "a"
+     ],
+     "fuel_level_before_pct": [
+      "30",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "30% · 14.4L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "14.4",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 25200,
+     "fuel_level_before_pct": 30,
+     "fuel_grade": "92",
+     "fuel_liters": 33.6,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_l"
+     ]
+    }
+   }
+  },
+  {
+   "name": "f_full_liters_to_before",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "33.5"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "33.5",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "30",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "30% · 14.4L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "14.4",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 30,
+     "fuel_grade": "92",
+     "fuel_liters": 33.5,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "f_notfull_after",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "check",
+     "fuel_is_full",
+     false
+    ],
+    [
+     "type",
+     "fuel_level_before_pct",
+     "20"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "24"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "24",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "20",
+      "u"
+     ],
+     "fuel_level_after_pct": [
+      "70",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "20% · 9.6L",
+     "fuel_level_after_pct": "70% · 33.6L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": false,
+     "missed_before": false
+    },
+    "lit": "9.6",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 20,
+     "fuel_grade": "92",
+     "fuel_liters": 24,
+     "fuel_is_full": false,
+     "fuel_level_after_pct": 70,
+     "estimated_fields": [
+      "fuel_after_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "f_liters_gauge_liters_typed",
+   "veh": "phevL",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "30"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "30",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "37.5",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "38% · 18L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "18",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 37.5,
+     "fuel_grade": "92",
+     "fuel_liters": 30,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "f_liters_gauge_lit",
+   "veh": "phevL",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "lit",
+     "fuel_level_before_pct",
+     "12"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "36",
+      "a"
+     ],
+     "fuel_level_before_pct": [
+      "25.0",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "25% · 12L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "12",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 25,
+     "fuel_grade": "92",
+     "fuel_liters": 36,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_l"
+     ]
+    }
+   }
+  },
+  {
+   "name": "f_bars_bar",
+   "veh": "phevB",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "bar",
+     "fuel_level_before_pct",
+     3
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "30",
+      "a"
+     ],
+     "fuel_level_before_pct": [
+      "37.5",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 37.5,
+     "fuel_grade": "92",
+     "fuel_liters": 30,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_l"
+     ]
+    }
+   }
+  },
+  {
+   "name": "f_bars_liters",
+   "veh": "phevB",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "30"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "30",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "37.5",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "3/8 格"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 37.5,
+     "fuel_grade": "92",
+     "fuel_liters": 30,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "f_user_all",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_level_before_pct",
+     "30"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "10"
+    ],
+    [
+     "type",
+     "fuel_unit_price",
+     "7"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "10",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7",
+      "u"
+     ],
+     "amount": [
+      "70",
+      "a"
+     ],
+     "fuel_level_before_pct": [
+      "30",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "30% · 14.4L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "14.4",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 7000,
+     "fuel_level_before_pct": 30,
+     "fuel_grade": "92",
+     "fuel_liters": 10,
+     "fuel_unit_price": 7,
+     "fuel_is_full": true,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "f_amount_price_before",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_unit_price",
+     "7.5"
+    ],
+    [
+     "type",
+     "amount",
+     "225"
+    ],
+    [
+     "type",
+     "fuel_level_before_pct",
+     "40"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "30",
+      "a"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "225",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "40",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "40% · 19.2L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "19.2",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 22500,
+     "fuel_level_before_pct": 40,
+     "fuel_grade": "92",
+     "fuel_liters": 30,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": true,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "f_ice_full",
+   "veh": "ice",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "40"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "40",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "20",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "20% · 10L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "10",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 20,
+     "fuel_grade": "92",
+     "fuel_liters": 40,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "f_zero_liters",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "check",
+     "fuel_is_full",
+     false
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "0"
+    ],
+    [
+     "type",
+     "fuel_unit_price",
+     "7.5"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "0",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "0",
+      "a"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 0,
+     "fuel_grade": "92",
+     "fuel_liters": 0,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "f_price_only",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_unit_price",
+     "7.5"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "请至少填写加油量或金额"
+   }
+  },
+  {
+   "name": "f_same_last",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "same"
+    ],
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "prefill": {
+    "last": {
+     "id": 9,
+     "kind": "fuel",
+     "fuel_grade": "95",
+     "fuel_unit_price": 7.8,
+     "place_id": 12,
+     "place_name": "中石化",
+     "fuel_is_full": false,
+     "occurred_at": "2026-10-20T08:00",
+     "vehicle_id": 1
+    }
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.8",
+      "u"
+     ],
+     "amount": [
+      "156",
+      "a"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "fuel_grade": "95"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "12",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 15600,
+     "place_id": 12,
+     "place_name": "中石化",
+     "fuel_grade": "95",
+     "fuel_liters": 20,
+     "fuel_unit_price": 7.8,
+     "fuel_is_full": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "f_place_gas",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "place",
+     12
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.62",
+      "u"
+     ],
+     "amount": [
+      "152.4",
+      "a"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "95"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "12",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 15240,
+     "fuel_level_before_pct": 58,
+     "place_id": 12,
+     "place_name": "中石化",
+     "fuel_grade": "95",
+     "fuel_liters": 20,
+     "fuel_unit_price": 7.62,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "f_extra_fee",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "check",
+     "fuel_is_full",
+     false
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ],
+    [
+     "type",
+     "fuel_unit_price",
+     "7.5"
+    ],
+    [
+     "type",
+     "extra_fee",
+     "10"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "150",
+      "a"
+     ],
+     "extra_fee": [
+      "10",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 15000,
+     "extra_fee_cents": 1000,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "f_grade_chip",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ],
+    [
+     "chip",
+     "grade",
+     "98"
+    ],
+    [
+     "type",
+     "note",
+     "  备注  "
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "98"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "备注",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "98",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "odo_delta",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10350"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10350",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "本次 +350 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10350,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "odo_negative",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "9900"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "9900",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "本次 -100 km",
+     "w": true
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 9900,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "odo_big",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "13000"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "13000",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "本次 +3,000 km",
+     "w": true
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 13000,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "odo_backfill",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "occurred_at",
+     "2026-10-10T08:00"
+    ],
+    [
+     "type",
+     "odometer_km",
+     "9800"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "9800",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "比 10-01 +300 km",
+     "w": false
+    },
+    "odoPh": "上次 9,500",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-10T08:00",
+     "odometer_km": 9800,
+     "odometer_estimated": false,
+     "source": "backfill",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "odo_backfill_greater",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "occurred_at",
+     "2026-10-10T08:00"
+    ],
+    [
+     "type",
+     "odometer_km",
+     "10500"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10500",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "比之后 10-20 的 10,000 km 还大",
+     "w": true
+    },
+    "odoPh": "上次 9,500",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-10T08:00",
+     "odometer_km": 10500,
+     "odometer_estimated": false,
+     "source": "backfill",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "odo_backfill_between",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "occurred_at",
+     "2026-10-15T08:00"
+    ],
+    [
+     "type",
+     "odometer_km",
+     "9800"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "9800",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "比 10-01 +300 km",
+     "w": false
+    },
+    "odoPh": "上次 9,500",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-15T08:00",
+     "odometer_km": 9800,
+     "odometer_estimated": false,
+     "source": "backfill",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "odo_trip_backfill",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "occurred_at",
+     "2026-10-15T08:00"
+    ],
+    [
+     "check",
+     "trip_mode",
+     true
+    ],
+    [
+     "type",
+     "odometer_km",
+     "120"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "120",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": true,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "比 10-01 +120 km",
+     "w": false
+    },
+    "odoPh": "本次行驶公里数",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-15T08:00",
+     "odometer_km": 9620,
+     "odometer_estimated": false,
+     "source": "backfill",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "odo_trip",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "check",
+     "trip_mode",
+     true
+    ],
+    [
+     "type",
+     "odometer_km",
+     "120"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "120",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": true,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "总里程 10,120",
+     "w": false
+    },
+    "odoPh": "本次行驶公里数",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10120,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "odo_unknown",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "check",
+     "odo_unknown",
+     true
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": true,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "里程按前后记录推算",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": true,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_estimated": true,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct",
+      "odometer_km"
+     ]
+    }
+   }
+  },
+  {
+   "name": "odo_none",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "上次 10,000",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "请填写里程，或勾选「不确定里程」"
+   }
+  },
+  {
+   "name": "odo_no_last",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "500"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "prefill": {
+    "last_odo": null,
+    "last_odo_ts": null
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "500",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "本次 -9,500 km",
+     "w": true
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 500,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "c_soc_to_kwh",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "soc_before_pct",
+     "10"
+    ],
+    [
+     "type",
+     "soc_after_pct",
+     "90"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "soc_before_pct": [
+      "10",
+      "u"
+     ],
+     "soc_after_pct": [
+      "90",
+      "u"
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "10%",
+     "soc_after_pct": "90%"
+    },
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "soc_before_pct": 10,
+     "charge_type": "home",
+     "charge_to_limit": false,
+     "soc_after_pct": 90,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_kwh_to_soc",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "soc_before_pct",
+     "10"
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "14"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "soc_before_pct": [
+      "10",
+      "u"
+     ],
+     "soc_after_pct": [
+      "80",
+      "a"
+     ],
+     "charge_kwh": [
+      "14",
+      "u"
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "10%",
+     "soc_after_pct": "80%"
+    },
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "soc_before_pct": 10,
+     "charge_type": "home",
+     "charge_kwh": 14,
+     "charge_to_limit": false,
+     "soc_after_pct": 80,
+     "estimated_fields": [
+      "soc_after"
+     ]
+    }
+   }
+  },
+  {
+   "name": "c_to_limit_bev",
+   "veh": "bev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "soc_before_pct",
+     "20"
+    ],
+    [
+     "check",
+     "charge_to_limit",
+     true
+    ]
+   ],
+   "prefill": {
+    "k": 0.75
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "soc_before_pct": [
+      "20",
+      "u"
+     ],
+     "soc_after_pct": [
+      "80",
+      "a"
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "20%",
+     "soc_after_pct": "80%"
+    },
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": true,
+     "missed_before": false
+    },
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "soc_before_pct": 20,
+     "charge_type": "home",
+     "charge_to_limit": true,
+     "soc_after_pct": 80,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_swap",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "chip",
+     "ctype",
+     "swap"
+    ],
+    [
+     "type",
+     "soc_before_pct",
+     "20"
+    ],
+    [
+     "type",
+     "soc_after_pct",
+     "100"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "soc_before_pct": [
+      "20",
+      "u"
+     ],
+     "soc_after_pct": [
+      "100",
+      "u"
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "20%",
+     "soc_after_pct": "100%"
+    },
+    "chips": {
+     "charge_type": "swap"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "soc_before_pct": 20,
+     "charge_type": "swap",
+     "charge_to_limit": false,
+     "soc_after_pct": 100,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_tou_basic",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "occurred_at",
+     "2026-10-27T23:00"
+    ],
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "place",
+     11
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "10"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "charge_kwh": [
+      "10",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "tariff": "按「家里车位」的峰谷电价约 ¥3.00",
+    "place": "11",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T23:00",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "place_id": 11,
+     "place_name": "家里车位",
+     "charge_type": "home",
+     "charge_kwh": 10,
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_tou_minutes",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "occurred_at",
+     "2026-10-27T20:30"
+    ],
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "place",
+     11
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "18.3"
+    ],
+    [
+     "type",
+     "charge_minutes",
+     "120"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "charge_kwh": [
+      "18.3",
+      "u"
+     ],
+     "charge_minutes": [
+      "120",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "tariff": "按「家里车位」的峰谷电价约 ¥9.88",
+    "place": "11",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T20:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "place_id": 11,
+     "place_name": "家里车位",
+     "charge_type": "home",
+     "charge_kwh": 18.3,
+     "charge_to_limit": false,
+     "charge_minutes": 120,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_tou_midnight",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "occurred_at",
+     "2026-10-27T23:00"
+    ],
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "place",
+     11
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "30"
+    ],
+    [
+     "type",
+     "charge_minutes",
+     "300"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "charge_kwh": [
+      "30",
+      "u"
+     ],
+     "charge_minutes": [
+      "300",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "tariff": "按「家里车位」的峰谷电价约 ¥9.00",
+    "place": "11",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T23:00",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "place_id": 11,
+     "place_name": "家里车位",
+     "charge_type": "home",
+     "charge_kwh": 30,
+     "charge_to_limit": false,
+     "charge_minutes": 300,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_tou_day",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "occurred_at",
+     "2026-10-27T12:07"
+    ],
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "place",
+     11
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "7.7"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "charge_kwh": [
+      "7.7",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "tariff": "按「家里车位」的峰谷电价约 ¥4.77",
+    "place": "11",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T12:07",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "place_id": 11,
+     "place_name": "家里车位",
+     "charge_type": "home",
+     "charge_kwh": 7.7,
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_tou_user_price",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "place",
+     11
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "10"
+    ],
+    [
+     "type",
+     "charge_unit_price",
+     "0.5"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "charge_kwh": [
+      "10",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "tariff": "按「家里车位」的峰谷电价约 ¥6.20",
+    "place": "11",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "place_id": 11,
+     "place_name": "家里车位",
+     "charge_type": "home",
+     "charge_kwh": 10,
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_tou_user_amount",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "place",
+     11
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "10"
+    ],
+    [
+     "type",
+     "amount",
+     "4"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "amount": [
+      "4",
+      "u"
+     ],
+     "charge_kwh": [
+      "10",
+      "u"
+     ],
+     "charge_unit_price": [
+      "0.4",
+      ""
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "tariff": "按「家里车位」的峰谷电价约 ¥6.20",
+    "place": "11",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 400,
+     "place_id": 11,
+     "place_name": "家里车位",
+     "charge_type": "home",
+     "charge_kwh": 10,
+     "charge_unit_price": 0.4,
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_fee_sum",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "energy_fee",
+     "8"
+    ],
+    [
+     "type",
+     "service_fee",
+     "2.5"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "amount": [
+      "10.5",
+      "a"
+     ],
+     "energy_fee": [
+      "8",
+      "u"
+     ],
+     "service_fee": [
+      "2.5",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 1050,
+     "charge_type": "home",
+     "charge_to_limit": false,
+     "energy_fee_cents": 800,
+     "service_fee_cents": 250,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_kwh_price",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "12.3"
+    ],
+    [
+     "type",
+     "charge_unit_price",
+     "0.456"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "charge_kwh": [
+      "12.3",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "charge_type": "home",
+     "charge_kwh": 12.3,
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_kwh_amount",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "20"
+    ],
+    [
+     "type",
+     "amount",
+     "10"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "amount": [
+      "10",
+      "u"
+     ],
+     "charge_kwh": [
+      "20",
+      "u"
+     ],
+     "charge_unit_price": [
+      "0.5",
+      ""
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 1000,
+     "charge_type": "home",
+     "charge_kwh": 20,
+     "charge_unit_price": 0.5,
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_amount_then_kwh",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "amount",
+     "30"
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "40"
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "50"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "amount": [
+      "30",
+      "u"
+     ],
+     "charge_kwh": [
+      "50",
+      "u"
+     ],
+     "charge_unit_price": [
+      "0.6",
+      ""
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 3000,
+     "charge_type": "home",
+     "charge_kwh": 50,
+     "charge_unit_price": 0.6,
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_paid_default",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "10"
+    ],
+    [
+     "type",
+     "charge_unit_price",
+     "1.2"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "charge_kwh": [
+      "10",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "charge_type": "home",
+     "charge_kwh": 10,
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_soc_price_amount",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "soc_before_pct",
+     "10"
+    ],
+    [
+     "type",
+     "soc_after_pct",
+     "90"
+    ],
+    [
+     "type",
+     "charge_unit_price",
+     "0.3"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "soc_before_pct": [
+      "10",
+      "u"
+     ],
+     "soc_after_pct": [
+      "90",
+      "u"
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "10%",
+     "soc_after_pct": "90%"
+    },
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "soc_before_pct": 10,
+     "charge_type": "home",
+     "charge_to_limit": false,
+     "soc_after_pct": 90,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_fuel_level",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "fuel_level_before_pct",
+     "40"
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "9"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "40",
+      "u"
+     ],
+     "charge_kwh": [
+      "9",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "40% · 19.2L"
+    },
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "19.2",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 40,
+     "charge_type": "home",
+     "charge_kwh": 9,
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_pub_place",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "place",
+     13
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "charge_kwh": [
+      "20",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "dc"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "13",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "place_id": 13,
+     "place_name": "公司桩",
+     "charge_type": "dc",
+     "charge_kwh": 20,
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_start_only",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "soc_before_pct",
+     "20"
+    ],
+    [
+     "place",
+     11
+    ],
+    [
+     "start"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "soc_before_pct": [
+      "20",
+      "u"
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "20%"
+    },
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "11",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "in_progress",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "soc_before_pct": 20,
+     "place_id": 11,
+     "place_name": "家里车位",
+     "charge_type": "home",
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "c_missed",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "check",
+     "missed_before",
+     true
+    ],
+    [
+     "type",
+     "charge_kwh",
+     "9"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "charge_kwh": [
+      "9",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": true
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": true,
+     "charge_type": "home",
+     "charge_kwh": 9,
+     "charge_to_limit": false,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "s_basic",
+   "veh": "phev",
+   "kind": "snapshot",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "soc_before_pct",
+     "55"
+    ],
+    [
+     "chip",
+     "snap",
+     "before_park"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "soc_before_pct": [
+      "55",
+      "u"
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "55%"
+    },
+    "chips": {
+     "snapshot_tag": "before_park"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "snapshot",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "soc_before_pct": 55,
+     "snapshot_tag": "before_park",
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "s_empty",
+   "veh": "phev",
+   "kind": "snapshot",
+   "act": [
+    [
+     "check",
+     "odo_unknown",
+     true
+    ]
+   ],
+   "expected": {
+    "f": {},
+    "lv": {},
+    "chips": {
+     "snapshot_tag": "other"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": true
+    },
+    "lit": "",
+    "odo": {
+     "t": "里程按前后记录推算",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": true,
+    "err": "快照至少要填里程、电量或油量中的一项"
+   }
+  },
+  {
+   "name": "s_fuel_only",
+   "veh": "phev",
+   "kind": "snapshot",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "fuel_level_before_pct",
+     "40"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "40",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "40% · 19.2L"
+    },
+    "chips": {
+     "snapshot_tag": "other"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false
+    },
+    "lit": "19.2",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "snapshot",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 40,
+     "snapshot_tag": "other",
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "s_bars",
+   "veh": "phevB",
+   "kind": "snapshot",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "bar",
+     "fuel_level_before_pct",
+     5
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "62.5",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "snapshot_tag": "other"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false
+    },
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "snapshot",
+     "status": "done",
+     "occurred_at": "2026-10-27T08:30",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 62.5,
+     "snapshot_tag": "other",
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "v_fuel_empty",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "请至少填写加油量或金额"
+   }
+  },
+  {
+   "name": "v_soc_range",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "10100"
+    ],
+    [
+     "type",
+     "soc_before_pct",
+     "120"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "soc_before_pct": [
+      "120",
+      "u"
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "120%"
+    },
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "电量和油量要在 0–100% 之间"
+   }
+  },
+  {
+   "name": "src_backfill",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "occurred_at",
+     "2026-09-01T08:00"
+    ],
+    [
+     "type",
+     "odometer_km",
+     "8000"
+    ],
+    [
+     "type",
+     "fuel_liters",
+     "20"
+    ]
+   ],
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "8000",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "",
+     "w": false
+    },
+    "odoPh": "仪表盘总里程",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-09-01T08:00",
+     "odometer_km": 8000,
+     "odometer_estimated": false,
+     "source": "backfill",
+     "note": "",
+     "missed_before": false,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "e_charge_est",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [],
+   "record": {
+    "id": 1,
+    "kind": "charge",
+    "occurred_at": "2026-10-26T20:00",
+    "odometer_km": 10100,
+    "odometer_estimated": false,
+    "charge_type": "home",
+    "charge_kwh": 16,
+    "soc_before_pct": 10,
+    "soc_after_pct": 90,
+    "amount_cents": 480,
+    "charge_unit_price": 0.3,
+    "estimated_fields": [
+     "charge_kwh"
+    ],
+    "source": "manual",
+    "note": "x",
+    "place_id": 11,
+    "place_name": "家里车位",
+    "missed_before": false
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "amount": [
+      "4.8",
+      "u"
+     ],
+     "soc_before_pct": [
+      "10",
+      "u"
+     ],
+     "soc_after_pct": [
+      "90",
+      "u"
+     ],
+     "charge_kwh": [
+      "16",
+      "u"
+     ],
+     "charge_unit_price": [
+      "0.3",
+      ""
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "10%",
+     "soc_after_pct": "90%"
+    },
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "tariff": "按「家里车位」的峰谷电价约 ¥9.92",
+    "place": "11",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-26T20:00",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "x",
+     "missed_before": false,
+     "amount_cents": 480,
+     "soc_before_pct": 10,
+     "place_id": 11,
+     "place_name": "家里车位",
+     "charge_type": "home",
+     "charge_kwh": 16,
+     "charge_unit_price": 0.3,
+     "charge_to_limit": false,
+     "soc_after_pct": 90,
+     "estimated_fields": [
+      "charge_kwh"
+     ]
+    }
+   }
+  },
+  {
+   "name": "e_charge_change_soc",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "soc_after_pct",
+     "80"
+    ]
+   ],
+   "record": {
+    "id": 1,
+    "kind": "charge",
+    "occurred_at": "2026-10-26T20:00",
+    "odometer_km": 10100,
+    "odometer_estimated": false,
+    "charge_type": "home",
+    "charge_kwh": 16,
+    "soc_before_pct": 10,
+    "soc_after_pct": 90,
+    "amount_cents": 480,
+    "charge_unit_price": 0.3,
+    "estimated_fields": [
+     "charge_kwh"
+    ],
+    "source": "manual",
+    "note": "x",
+    "place_id": 11,
+    "place_name": "家里车位",
+    "missed_before": false
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "amount": [
+      "4.8",
+      "u"
+     ],
+     "soc_before_pct": [
+      "10",
+      "u"
+     ],
+     "soc_after_pct": [
+      "80",
+      "u"
+     ],
+     "charge_kwh": [
+      "16",
+      "u"
+     ],
+     "charge_unit_price": [
+      "0.3",
+      ""
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "10%",
+     "soc_after_pct": "80%"
+    },
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "tariff": "按「家里车位」的峰谷电价约 ¥9.92",
+    "place": "11",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-26T20:00",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "x",
+     "missed_before": false,
+     "amount_cents": 480,
+     "soc_before_pct": 10,
+     "place_id": 11,
+     "place_name": "家里车位",
+     "charge_type": "home",
+     "charge_kwh": 16,
+     "charge_unit_price": 0.3,
+     "charge_to_limit": false,
+     "soc_after_pct": 80,
+     "estimated_fields": [
+      "charge_kwh"
+     ]
+    }
+   }
+  },
+  {
+   "name": "e_charge_change_kwh",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "charge_kwh",
+     "15"
+    ]
+   ],
+   "record": {
+    "id": 1,
+    "kind": "charge",
+    "occurred_at": "2026-10-26T20:00",
+    "odometer_km": 10100,
+    "odometer_estimated": false,
+    "charge_type": "home",
+    "charge_kwh": 16,
+    "soc_before_pct": 10,
+    "soc_after_pct": 90,
+    "amount_cents": 480,
+    "charge_unit_price": 0.3,
+    "estimated_fields": [
+     "charge_kwh"
+    ],
+    "source": "manual",
+    "note": "x",
+    "place_id": 11,
+    "place_name": "家里车位",
+    "missed_before": false
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "amount": [
+      "4.8",
+      "u"
+     ],
+     "soc_before_pct": [
+      "10",
+      "u"
+     ],
+     "soc_after_pct": [
+      "90",
+      "u"
+     ],
+     "charge_kwh": [
+      "15",
+      "u"
+     ],
+     "charge_unit_price": [
+      "0.32",
+      ""
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "10%",
+     "soc_after_pct": "90%"
+    },
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "tariff": "按「家里车位」的峰谷电价约 ¥9.30",
+    "place": "11",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-26T20:00",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "x",
+     "missed_before": false,
+     "amount_cents": 480,
+     "soc_before_pct": 10,
+     "place_id": 11,
+     "place_name": "家里车位",
+     "charge_type": "home",
+     "charge_kwh": 15,
+     "charge_unit_price": 0.32,
+     "charge_to_limit": false,
+     "soc_after_pct": 90,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "e_charge_clear_kwh",
+   "veh": "phev",
+   "kind": "charge",
+   "act": [
+    [
+     "type",
+     "charge_kwh",
+     ""
+    ]
+   ],
+   "record": {
+    "id": 1,
+    "kind": "charge",
+    "occurred_at": "2026-10-26T20:00",
+    "odometer_km": 10100,
+    "odometer_estimated": false,
+    "charge_type": "home",
+    "charge_kwh": 16,
+    "soc_before_pct": 10,
+    "soc_after_pct": 90,
+    "amount_cents": 480,
+    "charge_unit_price": 0.3,
+    "estimated_fields": [
+     "charge_kwh"
+    ],
+    "source": "manual",
+    "note": "x",
+    "place_id": 11,
+    "place_name": "家里车位",
+    "missed_before": false
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10100",
+      "u"
+     ],
+     "amount": [
+      "4.8",
+      "u"
+     ],
+     "soc_before_pct": [
+      "10",
+      "u"
+     ],
+     "soc_after_pct": [
+      "90",
+      "u"
+     ],
+     "charge_unit_price": [
+      "0.3",
+      ""
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "10%",
+     "soc_after_pct": "90%"
+    },
+    "chips": {
+     "charge_type": "home"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "charge_to_limit": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "本次 +100 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "11",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "charge",
+     "status": "done",
+     "occurred_at": "2026-10-26T20:00",
+     "odometer_km": 10100,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "x",
+     "missed_before": false,
+     "amount_cents": 480,
+     "soc_before_pct": 10,
+     "place_id": 11,
+     "place_name": "家里车位",
+     "charge_type": "home",
+     "charge_unit_price": 0.3,
+     "charge_to_limit": false,
+     "soc_after_pct": 90,
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "e_delivery_snapshot",
+   "veh": "phev",
+   "kind": "snapshot",
+   "act": [],
+   "record": {
+    "id": 1,
+    "kind": "snapshot",
+    "occurred_at": "2025-12-31T09:00",
+    "odometer_km": 12,
+    "odometer_estimated": false,
+    "snapshot_tag": "delivery",
+    "fuel_level_before_pct": 10.42,
+    "soc_before_pct": null,
+    "estimated_fields": [
+     "fuel_before_pct"
+    ],
+    "source": "manual",
+    "note": "提车"
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "12",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "10.42",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "10% · 5L"
+    },
+    "chips": {
+     "snapshot_tag": "delivery"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false
+    },
+    "lit": "5",
+    "odo": {
+     "t": "",
+     "w": false
+    },
+    "odoPh": "仪表盘总里程",
+    "odoDisabled": false,
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "snapshot",
+     "status": "done",
+     "occurred_at": "2025-12-31T09:00",
+     "odometer_km": 12,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "提车",
+     "missed_before": false,
+     "fuel_level_before_pct": 10.42,
+     "snapshot_tag": "delivery",
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "e_delivery_snapshot_odo",
+   "veh": "phev",
+   "kind": "snapshot",
+   "act": [
+    [
+     "type",
+     "odometer_km",
+     "15"
+    ]
+   ],
+   "record": {
+    "id": 1,
+    "kind": "snapshot",
+    "occurred_at": "2025-12-31T09:00",
+    "odometer_km": 12,
+    "odometer_estimated": false,
+    "snapshot_tag": "delivery",
+    "fuel_level_before_pct": 10.42,
+    "soc_before_pct": null,
+    "estimated_fields": [
+     "fuel_before_pct"
+    ],
+    "source": "manual",
+    "note": "提车"
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "15",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "10.42",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "10% · 5L"
+    },
+    "chips": {
+     "snapshot_tag": "delivery"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false
+    },
+    "lit": "5",
+    "odo": {
+     "t": "",
+     "w": false
+    },
+    "odoPh": "仪表盘总里程",
+    "odoDisabled": false,
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "snapshot",
+     "status": "done",
+     "occurred_at": "2025-12-31T09:00",
+     "odometer_km": 15,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "提车",
+     "missed_before": false,
+     "fuel_level_before_pct": 10.42,
+     "snapshot_tag": "delivery",
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "e_delivery_snapshot_fuel_changed",
+   "veh": "phev",
+   "kind": "snapshot",
+   "act": [
+    [
+     "type",
+     "fuel_level_before_pct",
+     "20"
+    ]
+   ],
+   "record": {
+    "id": 1,
+    "kind": "snapshot",
+    "occurred_at": "2025-12-31T09:00",
+    "odometer_km": 12,
+    "odometer_estimated": false,
+    "snapshot_tag": "delivery",
+    "fuel_level_before_pct": 10.42,
+    "soc_before_pct": null,
+    "estimated_fields": [
+     "fuel_before_pct"
+    ],
+    "source": "manual",
+    "note": "提车"
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "12",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "20",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "20% · 9.6L"
+    },
+    "chips": {
+     "snapshot_tag": "delivery"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false
+    },
+    "lit": "9.6",
+    "odo": {
+     "t": "",
+     "w": false
+    },
+    "odoPh": "仪表盘总里程",
+    "odoDisabled": false,
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "snapshot",
+     "status": "done",
+     "occurred_at": "2025-12-31T09:00",
+     "odometer_km": 12,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "提车",
+     "missed_before": false,
+     "fuel_level_before_pct": 20,
+     "snapshot_tag": "delivery",
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "e_ledger_start",
+   "veh": "phev",
+   "kind": "snapshot",
+   "act": [],
+   "record": {
+    "id": 1,
+    "kind": "snapshot",
+    "occurred_at": "2026-06-01T08:00",
+    "odometer_km": 9800,
+    "snapshot_tag": "ledger_start",
+    "soc_before_pct": 40,
+    "fuel_level_before_pct": 40,
+    "estimated_fields": [],
+    "source": "manual",
+    "note": ""
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "9800",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "40",
+      "u"
+     ],
+     "soc_before_pct": [
+      "40",
+      "u"
+     ]
+    },
+    "lv": {
+     "soc_before_pct": "40%",
+     "fuel_level_before_pct": "40% · 19.2L"
+    },
+    "chips": {
+     "snapshot_tag": "ledger_start"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false
+    },
+    "lit": "19.2",
+    "odo": {
+     "t": "",
+     "w": false
+    },
+    "odoPh": "仪表盘总里程",
+    "odoDisabled": false,
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "snapshot",
+     "status": "done",
+     "occurred_at": "2026-06-01T08:00",
+     "odometer_km": 9800,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "soc_before_pct": 40,
+     "fuel_level_before_pct": 40,
+     "snapshot_tag": "ledger_start",
+     "estimated_fields": []
+    }
+   }
+  },
+  {
+   "name": "e_odo_estimated",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [],
+   "record": {
+    "id": 1,
+    "kind": "fuel",
+    "occurred_at": "2026-10-25T08:00",
+    "odometer_km": 10050,
+    "odometer_estimated": true,
+    "fuel_liters": 20,
+    "fuel_unit_price": 7.5,
+    "amount_cents": 15000,
+    "fuel_is_full": false,
+    "fuel_grade": "92",
+    "estimated_fields": [
+     "odometer_km"
+    ],
+    "source": "manual",
+    "note": ""
+   },
+   "expected": {
+    "f": {
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "150",
+      "u"
+     ]
+    },
+    "lv": {},
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": true,
+     "fuel_is_full": false,
+     "missed_before": false
+    },
+    "lit": "",
+    "odo": {
+     "t": "里程按前后记录推算",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": true,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-25T08:00",
+     "odometer_estimated": true,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 15000,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": false,
+     "estimated_fields": [
+      "odometer_km"
+     ]
+    }
+   }
+  },
+  {
+   "name": "e_source_import",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [],
+   "record": {
+    "id": 1,
+    "kind": "fuel",
+    "occurred_at": "2026-01-25T08:00",
+    "odometer_km": 5050,
+    "odometer_estimated": false,
+    "fuel_liters": 20,
+    "fuel_unit_price": 7.5,
+    "amount_cents": 15000,
+    "fuel_is_full": true,
+    "fuel_grade": "92",
+    "estimated_fields": [],
+    "source": "import",
+    "note": "导入"
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "5050",
+      "u"
+     ],
+     "fuel_liters": [
+      "20",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "150",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "58",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "58% · 27.8L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "27.8",
+    "odo": {
+     "t": "",
+     "w": false
+    },
+    "odoPh": "仪表盘总里程",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-01-25T08:00",
+     "odometer_km": 5050,
+     "odometer_estimated": false,
+     "source": "import",
+     "note": "导入",
+     "missed_before": false,
+     "amount_cents": 15000,
+     "fuel_level_before_pct": 58,
+     "fuel_grade": "92",
+     "fuel_liters": 20,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "e_fuel_est",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [],
+   "record": {
+    "id": 1,
+    "kind": "fuel",
+    "occurred_at": "2026-10-25T08:00",
+    "odometer_km": 10050,
+    "odometer_estimated": false,
+    "fuel_liters": 33.6,
+    "fuel_unit_price": 7.5,
+    "amount_cents": 25200,
+    "fuel_is_full": true,
+    "fuel_grade": "92",
+    "fuel_level_before_pct": 30,
+    "estimated_fields": [
+     "fuel_l",
+     "fuel_before_pct"
+    ],
+    "source": "manual",
+    "note": ""
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10050",
+      "u"
+     ],
+     "fuel_liters": [
+      "33.6",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "252",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "30",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "30% · 14.4L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "14.4",
+    "odo": {
+     "t": "本次 +50 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-25T08:00",
+     "odometer_km": 10050,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 25200,
+     "fuel_level_before_pct": 30,
+     "fuel_grade": "92",
+     "fuel_liters": 33.6,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_l",
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "e_fuel_est_price",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "fuel_unit_price",
+     "7.6"
+    ]
+   ],
+   "record": {
+    "id": 1,
+    "kind": "fuel",
+    "occurred_at": "2026-10-25T08:00",
+    "odometer_km": 10050,
+    "odometer_estimated": false,
+    "fuel_liters": 33.6,
+    "fuel_unit_price": 7.5,
+    "amount_cents": 25200,
+    "fuel_is_full": true,
+    "fuel_grade": "92",
+    "fuel_level_before_pct": 30,
+    "estimated_fields": [
+     "fuel_l",
+     "fuel_before_pct"
+    ],
+    "source": "manual",
+    "note": ""
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10050",
+      "u"
+     ],
+     "fuel_liters": [
+      "33.6",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.6",
+      "u"
+     ],
+     "amount": [
+      "252",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "30",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "30% · 14.4L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "14.4",
+    "odo": {
+     "t": "本次 +50 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-25T08:00",
+     "odometer_km": 10050,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 25200,
+     "fuel_level_before_pct": 30,
+     "fuel_grade": "92",
+     "fuel_liters": 33.6,
+     "fuel_unit_price": 7.6,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_l",
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "e_fuel_est_liters",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "type",
+     "fuel_liters",
+     "30"
+    ]
+   ],
+   "record": {
+    "id": 1,
+    "kind": "fuel",
+    "occurred_at": "2026-10-25T08:00",
+    "odometer_km": 10050,
+    "odometer_estimated": false,
+    "fuel_liters": 33.6,
+    "fuel_unit_price": 7.5,
+    "amount_cents": 25200,
+    "fuel_is_full": true,
+    "fuel_grade": "92",
+    "fuel_level_before_pct": 30,
+    "estimated_fields": [
+     "fuel_l",
+     "fuel_before_pct"
+    ],
+    "source": "manual",
+    "note": ""
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10050",
+      "u"
+     ],
+     "fuel_liters": [
+      "30",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "252",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "30",
+      "u"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "30% · 14.4L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": true,
+     "missed_before": false
+    },
+    "lit": "14.4",
+    "odo": {
+     "t": "本次 +50 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-25T08:00",
+     "odometer_km": 10050,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 25200,
+     "fuel_level_before_pct": 30,
+     "fuel_grade": "92",
+     "fuel_liters": 30,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": true,
+     "estimated_fields": [
+      "fuel_before_pct"
+     ]
+    }
+   }
+  },
+  {
+   "name": "e_fuel_est_toggle_full",
+   "veh": "phev",
+   "kind": "fuel",
+   "act": [
+    [
+     "check",
+     "fuel_is_full",
+     false
+    ]
+   ],
+   "record": {
+    "id": 1,
+    "kind": "fuel",
+    "occurred_at": "2026-10-25T08:00",
+    "odometer_km": 10050,
+    "odometer_estimated": false,
+    "fuel_liters": 33.6,
+    "fuel_unit_price": 7.5,
+    "amount_cents": 25200,
+    "fuel_is_full": true,
+    "fuel_grade": "92",
+    "fuel_level_before_pct": 30,
+    "estimated_fields": [
+     "fuel_l",
+     "fuel_before_pct"
+    ],
+    "source": "manual",
+    "note": ""
+   },
+   "expected": {
+    "f": {
+     "odometer_km": [
+      "10050",
+      "u"
+     ],
+     "fuel_liters": [
+      "33.6",
+      "u"
+     ],
+     "fuel_unit_price": [
+      "7.5",
+      "u"
+     ],
+     "amount": [
+      "252",
+      "u"
+     ],
+     "fuel_level_before_pct": [
+      "30",
+      "u"
+     ],
+     "fuel_level_after_pct": [
+      "100",
+      "a"
+     ]
+    },
+    "lv": {
+     "fuel_level_before_pct": "30% · 14.4L",
+     "fuel_level_after_pct": "100% · 48L"
+    },
+    "chips": {
+     "fuel_grade": "92"
+    },
+    "sel": {
+     "trip_mode": false,
+     "odo_unknown": false,
+     "fuel_is_full": false,
+     "missed_before": false
+    },
+    "lit": "14.4",
+    "odo": {
+     "t": "本次 +50 km",
+     "w": false
+    },
+    "odoPh": "上次 10,000",
+    "odoDisabled": false,
+    "place": "",
+    "err": "",
+    "body": {
+     "vehicle_id": 1,
+     "kind": "fuel",
+     "status": "done",
+     "occurred_at": "2026-10-25T08:00",
+     "odometer_km": 10050,
+     "odometer_estimated": false,
+     "source": "manual",
+     "note": "",
+     "missed_before": false,
+     "amount_cents": 25200,
+     "fuel_level_before_pct": 30,
+     "fuel_grade": "92",
+     "fuel_liters": 33.6,
+     "fuel_unit_price": 7.5,
+     "fuel_is_full": false,
+     "fuel_level_after_pct": 100,
+     "estimated_fields": [
+      "fuel_l",
+      "fuel_before_pct",
+      "fuel_after_pct"
+     ]
+    }
+   }
+  }
+ ],
+ "util": {
+  "amount": [
+   [
+    "200+15",
+    215
+   ],
+   [
+    "(1+2)*3",
+    9
+   ],
+   [
+    "1/3",
+    0.3333333333333333
+   ],
+   [
+    "2*-3",
+    -6
+   ],
+   [
+    "1,000.5",
+    1000.5
+   ],
+   [
+    "¥12",
+    12
+   ],
+   [
+    "1++2",
+    null
+   ],
+   [
+    "",
+    null
+   ],
+   [
+    "abc",
+    null
+   ],
+   [
+    "5.",
+    null
+   ],
+   [
+    ".5",
+    0.5
+   ],
+   [
+    "1/0",
+    null
+   ],
+   [
+    "--1",
+    1
+   ],
+   [
+    "12 + 3",
+    15
+   ],
+   [
+    "0.1+0.2",
+    0.30000000000000004
+   ],
+   [
+    "3*(2+",
+    null
+   ],
+   [
+    "1e3",
+    null
+   ],
+   [
+    "１２",
+    null
+   ],
+   [
+    "2*3+4*5",
+    26
+   ],
+   [
+    "10/4",
+    2.5
+   ],
+   [
+    "-5",
+    -5
+   ],
+   [
+    "+5",
+    null
+   ]
+  ],
+  "num": [
+   [
+    1234.5,
+    2,
+    "1,234.5",
+    "1,234.50"
+   ],
+   [
+    30,
+    2,
+    "30",
+    "30.00"
+   ],
+   [
+    null,
+    2,
+    "–",
+    "–"
+   ],
+   [
+    0.30000000000000004,
+    2,
+    "0.3",
+    "0.30"
+   ],
+   [
+    1234.567,
+    2,
+    "1,234.57",
+    "1,234.57"
+   ],
+   [
+    0.125,
+    2,
+    "0.13",
+    "0.13"
+   ],
+   [
+    2.5,
+    0,
+    "3",
+    "3"
+   ],
+   [
+    -2.5,
+    0,
+    "-3",
+    "-3"
+   ],
+   [
+    1000000,
+    2,
+    "1,000,000",
+    "1,000,000.00"
+   ],
+   [
+    12345.678,
+    1,
+    "12,345.7",
+    "12,345.7"
+   ],
+   [
+    0,
+    2,
+    "0",
+    "0.00"
+   ],
+   [
+    100,
+    0,
+    "100",
+    "100"
+   ],
+   [
+    18.35,
+    1,
+    "18.4",
+    "18.4"
+   ],
+   [
+    1.005,
+    2,
+    "1.01",
+    "1.01"
+   ]
+  ],
+  "km": [
+   [
+    0,
+    "0"
+   ],
+   [
+    12.5,
+    "13"
+   ],
+   [
+    12345.6,
+    "12,346"
+   ],
+   [
+    999.5,
+    "1,000"
+   ],
+   [
+    1000,
+    "1,000"
+   ],
+   [
+    null,
+    "–"
+   ]
+  ],
+  "money": [
+   [
+    0,
+    false,
+    "¥0.00"
+   ],
+   [
+    1,
+    false,
+    "¥0.01"
+   ],
+   [
+    99,
+    false,
+    "¥0.99"
+   ],
+   [
+    12345,
+    false,
+    "¥123.45"
+   ],
+   [
+    1000000,
+    false,
+    "¥10,000"
+   ],
+   [
+    -550,
+    false,
+    "-¥5.50"
+   ],
+   [
+    100000000,
+    false,
+    "¥1,000,000"
+   ],
+   [
+    null,
+    false,
+    "–"
+   ],
+   [
+    123456.7,
+    false,
+    "¥1,234.57"
+   ],
+   [
+    5,
+    true,
+    "+¥0.05"
+   ],
+   [
+    -5,
+    true,
+    "-¥0.05"
+   ],
+   [
+    999999,
+    false,
+    "¥9,999.99"
+   ]
+  ],
+  "gauge": [
+   [
+    40,
+    "pct",
+    null,
+    null,
+    "40%"
+   ],
+   [
+    40.4,
+    "pct",
+    null,
+    null,
+    "40%"
+   ],
+   [
+    37.5,
+    "liters",
+    48,
+    null,
+    "18 L"
+   ],
+   [
+    37.5,
+    "bars",
+    null,
+    8,
+    "3/8 格"
+   ],
+   [
+    null,
+    "pct",
+    null,
+    null,
+    ""
+   ],
+   [
+    0,
+    "pct",
+    null,
+    null,
+    "0%"
+   ],
+   [
+    100,
+    "liters",
+    48,
+    null,
+    "48 L"
+   ],
+   [
+    20,
+    "liters",
+    null,
+    null,
+    "20%"
+   ]
+  ],
+  "pct": [
+   [
+    null,
+    null,
+    null
+   ],
+   [
+    5,
+    0.5,
+    9
+   ],
+   [
+    0,
+    0,
+    null
+   ]
+  ]
+ }
+}

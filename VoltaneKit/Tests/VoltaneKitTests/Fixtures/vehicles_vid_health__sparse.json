@@ -1,0 +1,30 @@
+{
+  "coverage": {
+    "elec": null,
+    "fuel": null
+  },
+  "issues": [
+    {
+      "action": "record_fuel",
+      "key": "no_full",
+      "level": "info",
+      "text": "还没有「加满」记录：下次加油建议加满，之后油耗就准了"
+    },
+    {
+      "action": null,
+      "key": "k_default",
+      "level": "info",
+      "text": "电耗目前按电池容量估算；充电时填一下开始和结束 SOC，会自动校准"
+    },
+    {
+      "action": "filter_estimated",
+      "key": "est_odo",
+      "level": "info",
+      "text": "有 2 条记录的里程是估算的"
+    }
+  ],
+  "k": 0.2033,
+  "k_source": "default",
+  "latest_odo": 23400.0,
+  "ledger_km": 0.0
+}

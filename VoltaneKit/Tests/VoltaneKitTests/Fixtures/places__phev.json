@@ -1,0 +1,64 @@
+[
+  {
+    "default_charge_type": "home",
+    "default_fuel_grade": null,
+    "id": 1,
+    "is_hidden": false,
+    "kind": "home_charger",
+    "last_unit_price": null,
+    "last_used_at": null,
+    "lat": null,
+    "lng": null,
+    "name": "家里车位",
+    "shared": true,
+    "sort_order": 0,
+    "tou_tariff": [
+      {
+        "from": "22:00",
+        "price": 0.3,
+        "to": "08:00"
+      },
+      {
+        "from": "08:00",
+        "price": 0.62,
+        "to": "22:00"
+      }
+    ],
+    "use_count": 40,
+    "vehicle_id": 1
+  },
+  {
+    "default_charge_type": "public_ac",
+    "default_fuel_grade": null,
+    "id": 3,
+    "is_hidden": false,
+    "kind": "charge_station",
+    "last_unit_price": 1.2,
+    "last_used_at": null,
+    "lat": null,
+    "lng": null,
+    "name": "公司地库充电桩",
+    "shared": true,
+    "sort_order": 0,
+    "tou_tariff": [],
+    "use_count": 6,
+    "vehicle_id": 1
+  },
+  {
+    "default_charge_type": null,
+    "default_fuel_grade": "92",
+    "id": 2,
+    "is_hidden": false,
+    "kind": "gas_station",
+    "last_unit_price": 7.62,
+    "last_used_at": null,
+    "lat": null,
+    "lng": null,
+    "name": "中石化 望京站",
+    "shared": true,
+    "sort_order": 0,
+    "tou_tariff": [],
+    "use_count": 3,
+    "vehicle_id": 1
+  }
+]

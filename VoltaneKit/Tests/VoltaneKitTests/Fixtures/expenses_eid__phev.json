@@ -1,0 +1,25 @@
+{
+  "amount_cents": 8500,
+  "can_delete": true,
+  "can_edit": true,
+  "category": "toll",
+  "client_id": null,
+  "created_by": {
+    "color": "#0EA5E9",
+    "id": 1,
+    "name": "管理员",
+    "username": "admin"
+  },
+  "deleted_at": null,
+  "id": 5,
+  "note": "[demo]",
+  "occurred_at": "2026-10-17T11:00",
+  "odometer_km": null,
+  "period_end": null,
+  "period_start": null,
+  "sub_items": [],
+  "title": "京沪高速",
+  "vehicle_id": 1,
+  "vendor": "",
+  "version": 1
+}

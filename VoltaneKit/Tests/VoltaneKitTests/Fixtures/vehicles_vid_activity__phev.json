@@ -1,0 +1,16 @@
+[
+  {
+    "action": "join",
+    "created_at": "2026-10-27T12:54Z",
+    "entity": "member",
+    "entity_id": 2,
+    "id": 1,
+    "summary": "添加了成员 家人（共同记录）",
+    "user": {
+      "color": "#0EA5E9",
+      "id": 1,
+      "name": "管理员",
+      "username": "admin"
+    }
+  }
+]

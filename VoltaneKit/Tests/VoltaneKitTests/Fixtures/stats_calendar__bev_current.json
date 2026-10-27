@@ -1,0 +1,898 @@
+{
+  "days": {
+    "2026-10-04": {
+      "cents": 2732,
+      "items": [
+        {
+          "amount_cents": 2732,
+          "badges": [
+            {
+              "anomaly": null,
+              "energy": "elec",
+              "excluded": false,
+              "kind": "drive",
+              "per100": 15.16,
+              "per_day": null,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": 60.7,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": "home",
+          "charge_unit_price": 0.45,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 81,
+          "kind": "charge",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo]",
+          "occurred_at": "2026-10-04T21:00",
+          "odometer_estimated": false,
+          "odometer_km": 5776.0,
+          "place_id": null,
+          "place_name": "小区充电桩",
+          "service_fee_cents": null,
+          "snapshot_tag": null,
+          "soc_after_pct": 90.0,
+          "soc_before_pct": 16.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        }
+      ],
+      "kinds": [
+        "charge"
+      ]
+    },
+    "2026-10-10": {
+      "cents": 0,
+      "items": [
+        {
+          "amount_cents": null,
+          "badges": [
+            {
+              "anomaly": null,
+              "energy": "elec",
+              "excluded": false,
+              "kind": "drive",
+              "per100": 15.56,
+              "per_day": null,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": null,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": null,
+          "charge_unit_price": null,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 82,
+          "kind": "snapshot",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo]",
+          "occurred_at": "2026-10-10T10:00",
+          "odometer_estimated": false,
+          "odometer_km": 5992.0,
+          "place_id": null,
+          "place_name": null,
+          "service_fee_cents": null,
+          "snapshot_tag": "before_park",
+          "soc_after_pct": null,
+          "soc_before_pct": 49.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        }
+      ],
+      "kinds": [
+        "snapshot"
+      ]
+    },
+    "2026-10-11": {
+      "cents": 0,
+      "items": [
+        {
+          "amount_cents": null,
+          "badges": [
+            {
+              "anomaly": null,
+              "energy": "elec",
+              "excluded": false,
+              "kind": "idle",
+              "per100": null,
+              "per_day": 4.92,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": null,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": null,
+          "charge_unit_price": null,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 84,
+          "kind": "snapshot",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo]",
+          "occurred_at": "2026-10-11T10:00",
+          "odometer_estimated": false,
+          "odometer_km": 5992.0,
+          "place_id": null,
+          "place_name": null,
+          "service_fee_cents": null,
+          "snapshot_tag": "before_park",
+          "soc_after_pct": null,
+          "soc_before_pct": 43.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        },
+        {
+          "amount_cents": null,
+          "badges": [
+            {
+              "anomaly": null,
+              "energy": "elec",
+              "excluded": false,
+              "kind": "idle",
+              "per100": null,
+              "per_day": null,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": null,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": null,
+          "charge_unit_price": null,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 83,
+          "kind": "snapshot",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo] 哨兵",
+          "occurred_at": "2026-10-11T16:00",
+          "odometer_estimated": false,
+          "odometer_km": 5992.0,
+          "place_id": null,
+          "place_name": null,
+          "service_fee_cents": null,
+          "snapshot_tag": "after_park",
+          "soc_after_pct": null,
+          "soc_before_pct": 43.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        }
+      ],
+      "kinds": [
+        "snapshot"
+      ]
+    },
+    "2026-10-12": {
+      "cents": 2286,
+      "items": [
+        {
+          "amount_cents": null,
+          "badges": [
+            {
+              "anomaly": null,
+              "energy": "elec",
+              "excluded": false,
+              "kind": "idle",
+              "per100": null,
+              "per_day": 4.92,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": null,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": null,
+          "charge_unit_price": null,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 85,
+          "kind": "snapshot",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo] 哨兵",
+          "occurred_at": "2026-10-12T16:00",
+          "odometer_estimated": false,
+          "odometer_km": 5992.0,
+          "place_id": null,
+          "place_name": null,
+          "service_fee_cents": null,
+          "snapshot_tag": "after_park",
+          "soc_after_pct": null,
+          "soc_before_pct": 37.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        },
+        {
+          "amount_cents": 2286,
+          "badges": [
+            {
+              "anomaly": null,
+              "energy": "elec",
+              "excluded": false,
+              "kind": "drive",
+              "per100": 14.46,
+              "per_day": null,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": 50.8,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": "home",
+          "charge_unit_price": 0.45,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 86,
+          "kind": "charge",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo]",
+          "occurred_at": "2026-10-12T21:00",
+          "odometer_estimated": false,
+          "odometer_km": 6043.0,
+          "place_id": null,
+          "place_name": "小区充电桩",
+          "service_fee_cents": null,
+          "snapshot_tag": null,
+          "soc_after_pct": 90.0,
+          "soc_before_pct": 28.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        }
+      ],
+      "kinds": [
+        "snapshot",
+        "charge"
+      ]
+    },
+    "2026-10-17": {
+      "cents": 2511,
+      "items": [
+        {
+          "amount_cents": 2511,
+          "badges": [
+            {
+              "anomaly": null,
+              "energy": "elec",
+              "excluded": false,
+              "kind": "drive",
+              "per100": 16.06,
+              "per_day": null,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": 55.8,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": "home",
+          "charge_unit_price": 0.45,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 87,
+          "kind": "charge",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo]",
+          "occurred_at": "2026-10-17T21:00",
+          "odometer_estimated": false,
+          "odometer_km": 6390.0,
+          "place_id": null,
+          "place_name": "小区充电桩",
+          "service_fee_cents": null,
+          "snapshot_tag": null,
+          "soc_after_pct": 90.0,
+          "soc_before_pct": 22.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        }
+      ],
+      "kinds": [
+        "charge"
+      ]
+    },
+    "2026-10-18": {
+      "cents": 0,
+      "items": [
+        {
+          "amount_cents": null,
+          "badges": [
+            {
+              "anomaly": null,
+              "energy": "elec",
+              "excluded": false,
+              "kind": "idle",
+              "per100": null,
+              "per_day": null,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": null,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": null,
+          "charge_unit_price": null,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 88,
+          "kind": "snapshot",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo]",
+          "occurred_at": "2026-10-18T10:00",
+          "odometer_estimated": false,
+          "odometer_km": 6390.0,
+          "place_id": null,
+          "place_name": null,
+          "service_fee_cents": null,
+          "snapshot_tag": "before_park",
+          "soc_after_pct": null,
+          "soc_before_pct": 90.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        }
+      ],
+      "kinds": [
+        "snapshot"
+      ]
+    },
+    "2026-10-19": {
+      "cents": 0,
+      "items": [
+        {
+          "amount_cents": null,
+          "badges": [
+            {
+              "anomaly": null,
+              "energy": "elec",
+              "excluded": false,
+              "kind": "idle",
+              "per100": null,
+              "per_day": 2.62,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": null,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": null,
+          "charge_unit_price": null,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 89,
+          "kind": "snapshot",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo] 哨兵",
+          "occurred_at": "2026-10-19T16:00",
+          "odometer_estimated": false,
+          "odometer_km": 6390.0,
+          "place_id": null,
+          "place_name": null,
+          "service_fee_cents": null,
+          "snapshot_tag": "after_park",
+          "soc_after_pct": null,
+          "soc_before_pct": 86.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        }
+      ],
+      "kinds": [
+        "snapshot"
+      ]
+    },
+    "2026-10-24": {
+      "cents": 2655,
+      "items": [
+        {
+          "amount_cents": 2655,
+          "badges": [
+            {
+              "anomaly": null,
+              "energy": "elec",
+              "excluded": false,
+              "kind": "drive",
+              "per100": 15.61,
+              "per_day": null,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": 59.0,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": "home",
+          "charge_unit_price": 0.45,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 90,
+          "kind": "charge",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo]",
+          "occurred_at": "2026-10-24T21:00",
+          "odometer_estimated": false,
+          "odometer_km": 6747.0,
+          "place_id": null,
+          "place_name": "小区充电桩",
+          "service_fee_cents": null,
+          "snapshot_tag": null,
+          "soc_after_pct": 90.0,
+          "soc_before_pct": 18.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        }
+      ],
+      "kinds": [
+        "charge"
+      ]
+    },
+    "2026-10-25": {
+      "cents": 0,
+      "items": [
+        {
+          "amount_cents": null,
+          "badges": [
+            {
+              "anomaly": null,
+              "energy": "elec",
+              "excluded": false,
+              "kind": "idle",
+              "per100": null,
+              "per_day": null,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": null,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": null,
+          "charge_unit_price": null,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 91,
+          "kind": "snapshot",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo]",
+          "occurred_at": "2026-10-25T10:00",
+          "odometer_estimated": false,
+          "odometer_km": 6747.0,
+          "place_id": null,
+          "place_name": null,
+          "service_fee_cents": null,
+          "snapshot_tag": "before_park",
+          "soc_after_pct": null,
+          "soc_before_pct": 90.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        }
+      ],
+      "kinds": [
+        "snapshot"
+      ]
+    },
+    "2026-10-26": {
+      "cents": 0,
+      "items": [
+        {
+          "amount_cents": null,
+          "badges": [
+            {
+              "anomaly": "idle_high",
+              "energy": "elec",
+              "excluded": false,
+              "kind": "idle",
+              "per100": null,
+              "per_day": 5.25,
+              "quality": "A",
+              "tag": "normal"
+            }
+          ],
+          "charge_kwh": null,
+          "charge_minutes": null,
+          "charge_to_limit": false,
+          "charge_type": null,
+          "charge_unit_price": null,
+          "client_id": null,
+          "created_at": "2026-10-27T12:54",
+          "created_by": {
+            "color": "#0EA5E9",
+            "id": 1,
+            "name": "管理员",
+            "username": "admin"
+          },
+          "deleted_at": null,
+          "energy_fee_cents": null,
+          "estimated_fields": [],
+          "extra_fee_cents": null,
+          "fuel_grade": null,
+          "fuel_is_full": false,
+          "fuel_level_after_pct": null,
+          "fuel_level_before_pct": null,
+          "fuel_liters": null,
+          "fuel_unit_price": null,
+          "id": 92,
+          "kind": "snapshot",
+          "lat": null,
+          "lng": null,
+          "missed_before": false,
+          "note": "[demo] 哨兵",
+          "occurred_at": "2026-10-26T16:00",
+          "odometer_estimated": false,
+          "odometer_km": 6747.0,
+          "place_id": null,
+          "place_name": null,
+          "service_fee_cents": null,
+          "snapshot_tag": "after_park",
+          "soc_after_pct": null,
+          "soc_before_pct": 82.0,
+          "source": "manual",
+          "status": "done",
+          "type": "record",
+          "updated_at": "2026-10-27T12:54",
+          "updated_by": null,
+          "vehicle_id": 2,
+          "version": 1
+        }
+      ],
+      "kinds": [
+        "snapshot"
+      ]
+    }
+  },
+  "month": "2026-10",
+  "report": {
+    "month": "2026-10",
+    "prev": {
+      "categories": {},
+      "combined": null,
+      "elec": {
+        "drive": {
+          "amount": 149.99,
+          "distance": 1574.0,
+          "err100": 0.62,
+          "per100": 9.53,
+          "quality": "A"
+        },
+        "idle": {
+          "amount": 109.01,
+          "count": 5,
+          "days": 3.8,
+          "per_day": 29.07,
+          "share": 0.421
+        },
+        "overall": {
+          "amount": 258.99,
+          "distance": 1574.0,
+          "err100": 1.15,
+          "per100": 16.45,
+          "quality": "A"
+        }
+      },
+      "elec_cents": 22100,
+      "elec_count": 5,
+      "elec_kwh": 254.2,
+      "energy_cents": 22100,
+      "energy_cost_per_km": 0.137,
+      "from": "2026-09-01",
+      "fuel": null,
+      "fuel_cents": 0,
+      "fuel_count": 0,
+      "fuel_l": 0.0,
+      "home_share": 0.635,
+      "mileage": 1611.4,
+      "other_cents": 0,
+      "summary_cents": 0,
+      "to": "2026-09-30",
+      "total_cents": 22100,
+      "total_cost_per_km": 0.137
+    },
+    "report": {
+      "categories": {},
+      "combined": null,
+      "elec": {
+        "drive": {
+          "amount": 213.1,
+          "distance": 1371.0,
+          "err100": 0.6,
+          "per100": 15.54,
+          "quality": "A"
+        },
+        "idle": {
+          "amount": 19.67,
+          "count": 7,
+          "days": 5.8,
+          "per_day": 3.37,
+          "share": 0.085
+        },
+        "overall": {
+          "amount": 232.77,
+          "distance": 1371.0,
+          "err100": 1.43,
+          "per100": 16.98,
+          "quality": "A"
+        }
+      },
+      "elec_cents": 10184,
+      "elec_count": 4,
+      "elec_kwh": 226.3,
+      "energy_cents": 10184,
+      "energy_cost_per_km": 0.08,
+      "from": "2026-10-01",
+      "fuel": null,
+      "fuel_cents": 0,
+      "fuel_count": 0,
+      "fuel_l": 0.0,
+      "home_share": 1.0,
+      "mileage": 1281.0,
+      "other_cents": 0,
+      "summary_cents": 0,
+      "to": "2026-10-31",
+      "total_cents": 10184,
+      "total_cost_per_km": 0.08
+    },
+    "sentence": "比上月少跑了 21%，每公里能源成本降到 ¥0.08，家充占比 100%。"
+  }
+}

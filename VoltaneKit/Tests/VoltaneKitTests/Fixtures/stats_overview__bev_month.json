@@ -1,0 +1,518 @@
+{
+  "daily_km": 53.4,
+  "history": {
+    "days": 75,
+    "elec": {
+      "amount": 620.16,
+      "distance": 3747.0,
+      "err100": 0.04,
+      "from_ts": "2026-08-13T08:00",
+      "high100": 16.59,
+      "low100": 16.51,
+      "per100": 16.55,
+      "quality": "C",
+      "to_ts": "2026-10-26T16:00"
+    },
+    "energy_cents": 43484,
+    "energy_cost_per_km": 0.116,
+    "has_summary": false,
+    "mileage": 3747.0,
+    "scope": "ledger",
+    "since": "2026-08-13",
+    "summary_before_cents": 0,
+    "total_cents": 43484,
+    "total_cost_per_km": 0.116
+  },
+  "in_progress": [],
+  "k": 0.8196,
+  "latest": {
+    "elec": {
+      "cost_per_km": 0.071,
+      "distance": 755.0,
+      "end_ts": "2026-10-24T21:00",
+      "per100": 15.74,
+      "quality": "A",
+      "segments": 3
+    },
+    "elec_totals": {
+      "drive": {
+        "amount": 213.1,
+        "distance": 1371.0,
+        "err100": 0.6,
+        "per100": 15.54,
+        "quality": "A"
+      },
+      "idle": {
+        "amount": 19.67,
+        "count": 7,
+        "days": 5.8,
+        "per_day": 3.37,
+        "share": 0.085
+      },
+      "overall": {
+        "amount": 232.77,
+        "distance": 1371.0,
+        "err100": 1.43,
+        "per100": 16.98,
+        "quality": "A"
+      }
+    }
+  },
+  "latest_odo": 6747.0,
+  "pending": [
+    {
+      "anomaly": "low",
+      "end_id": 73,
+      "energy": "elec",
+      "key": "anomaly:elec:73",
+      "text": "09-13 这段能耗明显偏低，可能漏记了补能（2.74 kWh/100km）",
+      "type": "anomaly"
+    },
+    {
+      "anomaly": "idle_high",
+      "end_id": 75,
+      "energy": "elec",
+      "key": "anomaly:elec:75",
+      "text": "09-20 这段停车耗电明显偏高，检查哨兵、空调等是否忘关（日均 55.9 kWh）",
+      "type": "anomaly"
+    },
+    {
+      "anomaly": "low",
+      "end_id": 77,
+      "energy": "elec",
+      "key": "anomaly:elec:77",
+      "text": "09-24 这段能耗明显偏低，可能漏记了补能（1.34 kWh/100km）",
+      "type": "anomaly"
+    },
+    {
+      "anomaly": "idle_high",
+      "end_id": 92,
+      "energy": "elec",
+      "key": "anomaly:elec:92",
+      "text": "10-26 这段停车耗电明显偏高，检查哨兵、空调等是否忘关（日均 5.25 kWh）",
+      "type": "anomaly"
+    }
+  ],
+  "period": {
+    "categories": {},
+    "combined": null,
+    "elec": {
+      "drive": {
+        "amount": 213.1,
+        "distance": 1371.0,
+        "err100": 0.6,
+        "per100": 15.54,
+        "quality": "A"
+      },
+      "idle": {
+        "amount": 19.67,
+        "count": 7,
+        "days": 5.8,
+        "per_day": 3.37,
+        "share": 0.085
+      },
+      "overall": {
+        "amount": 232.77,
+        "distance": 1371.0,
+        "err100": 1.43,
+        "per100": 16.98,
+        "quality": "A"
+      }
+    },
+    "elec_cents": 10184,
+    "elec_count": 4,
+    "elec_kwh": 226.3,
+    "energy_cents": 10184,
+    "energy_cost_per_km": 0.08,
+    "from": "2026-10-01",
+    "fuel": null,
+    "fuel_cents": 0,
+    "fuel_count": 0,
+    "fuel_l": 0.0,
+    "home_share": 1.0,
+    "mileage": 1281.0,
+    "other_cents": 0,
+    "summary_cents": 0,
+    "to": "2026-10-31",
+    "total_cents": 10184,
+    "total_cost_per_km": 0.08
+  },
+  "prev": {
+    "categories": {},
+    "combined": null,
+    "elec": {
+      "drive": {
+        "amount": 149.99,
+        "distance": 1574.0,
+        "err100": 0.62,
+        "per100": 9.53,
+        "quality": "A"
+      },
+      "idle": {
+        "amount": 109.01,
+        "count": 5,
+        "days": 3.8,
+        "per_day": 29.07,
+        "share": 0.421
+      },
+      "overall": {
+        "amount": 258.99,
+        "distance": 1574.0,
+        "err100": 1.15,
+        "per100": 16.45,
+        "quality": "A"
+      }
+    },
+    "elec_cents": 22100,
+    "elec_count": 5,
+    "elec_kwh": 254.2,
+    "energy_cents": 22100,
+    "energy_cost_per_km": 0.137,
+    "from": "2026-09-01",
+    "fuel": null,
+    "fuel_cents": 0,
+    "fuel_count": 0,
+    "fuel_l": 0.0,
+    "home_share": 0.635,
+    "mileage": 1611.4,
+    "other_cents": 0,
+    "summary_cents": 0,
+    "to": "2026-09-30",
+    "total_cents": 22100,
+    "total_cost_per_km": 0.137
+  },
+  "range": {
+    "from": "2026-10-01",
+    "key": "month",
+    "to": "2026-10-31"
+  },
+  "recent": [
+    {
+      "amount_cents": null,
+      "badges": [
+        {
+          "anomaly": "idle_high",
+          "energy": "elec",
+          "excluded": false,
+          "kind": "idle",
+          "per100": null,
+          "per_day": 5.25,
+          "quality": "A",
+          "tag": "normal"
+        }
+      ],
+      "charge_kwh": null,
+      "charge_minutes": null,
+      "charge_to_limit": false,
+      "charge_type": null,
+      "charge_unit_price": null,
+      "client_id": null,
+      "created_at": "2026-10-27T12:54",
+      "created_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "deleted_at": null,
+      "energy_fee_cents": null,
+      "estimated_fields": [],
+      "extra_fee_cents": null,
+      "fuel_grade": null,
+      "fuel_is_full": false,
+      "fuel_level_after_pct": null,
+      "fuel_level_before_pct": null,
+      "fuel_liters": null,
+      "fuel_unit_price": null,
+      "id": 92,
+      "kind": "snapshot",
+      "lat": null,
+      "lng": null,
+      "missed_before": false,
+      "note": "[demo] 哨兵",
+      "occurred_at": "2026-10-26T16:00",
+      "odometer_estimated": false,
+      "odometer_km": 6747.0,
+      "place_id": null,
+      "place_name": null,
+      "service_fee_cents": null,
+      "snapshot_tag": "after_park",
+      "soc_after_pct": null,
+      "soc_before_pct": 82.0,
+      "source": "manual",
+      "status": "done",
+      "type": "record",
+      "updated_at": "2026-10-27T12:54",
+      "updated_by": null,
+      "vehicle_id": 2,
+      "version": 1
+    },
+    {
+      "amount_cents": null,
+      "badges": [
+        {
+          "anomaly": null,
+          "energy": "elec",
+          "excluded": false,
+          "kind": "idle",
+          "per100": null,
+          "per_day": null,
+          "quality": "A",
+          "tag": "normal"
+        }
+      ],
+      "charge_kwh": null,
+      "charge_minutes": null,
+      "charge_to_limit": false,
+      "charge_type": null,
+      "charge_unit_price": null,
+      "client_id": null,
+      "created_at": "2026-10-27T12:54",
+      "created_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "deleted_at": null,
+      "energy_fee_cents": null,
+      "estimated_fields": [],
+      "extra_fee_cents": null,
+      "fuel_grade": null,
+      "fuel_is_full": false,
+      "fuel_level_after_pct": null,
+      "fuel_level_before_pct": null,
+      "fuel_liters": null,
+      "fuel_unit_price": null,
+      "id": 91,
+      "kind": "snapshot",
+      "lat": null,
+      "lng": null,
+      "missed_before": false,
+      "note": "[demo]",
+      "occurred_at": "2026-10-25T10:00",
+      "odometer_estimated": false,
+      "odometer_km": 6747.0,
+      "place_id": null,
+      "place_name": null,
+      "service_fee_cents": null,
+      "snapshot_tag": "before_park",
+      "soc_after_pct": null,
+      "soc_before_pct": 90.0,
+      "source": "manual",
+      "status": "done",
+      "type": "record",
+      "updated_at": "2026-10-27T12:54",
+      "updated_by": null,
+      "vehicle_id": 2,
+      "version": 1
+    },
+    {
+      "amount_cents": 2655,
+      "badges": [
+        {
+          "anomaly": null,
+          "energy": "elec",
+          "excluded": false,
+          "kind": "drive",
+          "per100": 15.61,
+          "per_day": null,
+          "quality": "A",
+          "tag": "normal"
+        }
+      ],
+      "charge_kwh": 59.0,
+      "charge_minutes": null,
+      "charge_to_limit": false,
+      "charge_type": "home",
+      "charge_unit_price": 0.45,
+      "client_id": null,
+      "created_at": "2026-10-27T12:54",
+      "created_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "deleted_at": null,
+      "energy_fee_cents": null,
+      "estimated_fields": [],
+      "extra_fee_cents": null,
+      "fuel_grade": null,
+      "fuel_is_full": false,
+      "fuel_level_after_pct": null,
+      "fuel_level_before_pct": null,
+      "fuel_liters": null,
+      "fuel_unit_price": null,
+      "id": 90,
+      "kind": "charge",
+      "lat": null,
+      "lng": null,
+      "missed_before": false,
+      "note": "[demo]",
+      "occurred_at": "2026-10-24T21:00",
+      "odometer_estimated": false,
+      "odometer_km": 6747.0,
+      "place_id": null,
+      "place_name": "小区充电桩",
+      "service_fee_cents": null,
+      "snapshot_tag": null,
+      "soc_after_pct": 90.0,
+      "soc_before_pct": 18.0,
+      "source": "manual",
+      "status": "done",
+      "type": "record",
+      "updated_at": "2026-10-27T12:54",
+      "updated_by": null,
+      "vehicle_id": 2,
+      "version": 1
+    },
+    {
+      "amount_cents": null,
+      "badges": [
+        {
+          "anomaly": null,
+          "energy": "elec",
+          "excluded": false,
+          "kind": "idle",
+          "per100": null,
+          "per_day": 2.62,
+          "quality": "A",
+          "tag": "normal"
+        }
+      ],
+      "charge_kwh": null,
+      "charge_minutes": null,
+      "charge_to_limit": false,
+      "charge_type": null,
+      "charge_unit_price": null,
+      "client_id": null,
+      "created_at": "2026-10-27T12:54",
+      "created_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "deleted_at": null,
+      "energy_fee_cents": null,
+      "estimated_fields": [],
+      "extra_fee_cents": null,
+      "fuel_grade": null,
+      "fuel_is_full": false,
+      "fuel_level_after_pct": null,
+      "fuel_level_before_pct": null,
+      "fuel_liters": null,
+      "fuel_unit_price": null,
+      "id": 89,
+      "kind": "snapshot",
+      "lat": null,
+      "lng": null,
+      "missed_before": false,
+      "note": "[demo] 哨兵",
+      "occurred_at": "2026-10-19T16:00",
+      "odometer_estimated": false,
+      "odometer_km": 6390.0,
+      "place_id": null,
+      "place_name": null,
+      "service_fee_cents": null,
+      "snapshot_tag": "after_park",
+      "soc_after_pct": null,
+      "soc_before_pct": 86.0,
+      "source": "manual",
+      "status": "done",
+      "type": "record",
+      "updated_at": "2026-10-27T12:54",
+      "updated_by": null,
+      "vehicle_id": 2,
+      "version": 1
+    }
+  ],
+  "record_count": 31,
+  "reminders": [],
+  "since_last_full": null,
+  "spark": {
+    "elec": [
+      {
+        "per100": 2.74,
+        "quality": "A",
+        "ts": "2026-09-13T21:00"
+      },
+      {
+        "per100": 15.74,
+        "quality": "A",
+        "ts": "2026-09-19T10:00"
+      },
+      {
+        "per100": 1.34,
+        "quality": "A",
+        "ts": "2026-09-24T21:00"
+      },
+      {
+        "per100": 15.01,
+        "quality": "A",
+        "ts": "2026-09-27T10:00"
+      },
+      {
+        "per100": 14.77,
+        "quality": "A",
+        "ts": "2026-09-29T21:00"
+      },
+      {
+        "per100": 15.16,
+        "quality": "A",
+        "ts": "2026-10-04T21:00"
+      },
+      {
+        "per100": 15.56,
+        "quality": "A",
+        "ts": "2026-10-10T10:00"
+      },
+      {
+        "per100": 14.46,
+        "quality": "A",
+        "ts": "2026-10-12T21:00"
+      },
+      {
+        "per100": 16.06,
+        "quality": "A",
+        "ts": "2026-10-17T21:00"
+      },
+      {
+        "per100": 15.61,
+        "quality": "A",
+        "ts": "2026-10-24T21:00"
+      }
+    ],
+    "fuel": []
+  },
+  "vehicle": {
+    "battery_usable_kwh": 75.0,
+    "brand": "",
+    "calc_settings": {},
+    "charge_limit_pct": 100.0,
+    "color": "#0EA5E9",
+    "data_version": 0,
+    "default_charge_type": "home",
+    "default_fuel_grade": "92",
+    "delivery_date": null,
+    "energy_label": "纯电",
+    "energy_type": "bev",
+    "factory_fuel_l": 5.0,
+    "fuel_gauge_bars": null,
+    "fuel_gauge_mode": "pct",
+    "has_elec": true,
+    "has_fuel": false,
+    "id": 2,
+    "initial_odometer_km": 3000.0,
+    "is_archived": false,
+    "model": "特斯拉 Model Y 长续航",
+    "name": "Model Y（演示）",
+    "plate": "沪B·E8888",
+    "purchase_price_cents": null,
+    "record_style": "detailed",
+    "role": "owner",
+    "tank_capacity_l": null,
+    "year": null
+  }
+}

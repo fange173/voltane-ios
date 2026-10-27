@@ -1,0 +1,92 @@
+{
+  "month": "2026-10",
+  "prev": {
+    "categories": {},
+    "combined": null,
+    "elec": {
+      "drive": {
+        "amount": 149.99,
+        "distance": 1574.0,
+        "err100": 0.62,
+        "per100": 9.53,
+        "quality": "A"
+      },
+      "idle": {
+        "amount": 109.01,
+        "count": 5,
+        "days": 3.8,
+        "per_day": 29.07,
+        "share": 0.421
+      },
+      "overall": {
+        "amount": 258.99,
+        "distance": 1574.0,
+        "err100": 1.15,
+        "per100": 16.45,
+        "quality": "A"
+      }
+    },
+    "elec_cents": 22100,
+    "elec_count": 5,
+    "elec_kwh": 254.2,
+    "energy_cents": 22100,
+    "energy_cost_per_km": 0.137,
+    "from": "2026-09-01",
+    "fuel": null,
+    "fuel_cents": 0,
+    "fuel_count": 0,
+    "fuel_l": 0.0,
+    "home_share": 0.635,
+    "mileage": 1611.4,
+    "other_cents": 0,
+    "summary_cents": 0,
+    "to": "2026-09-30",
+    "total_cents": 22100,
+    "total_cost_per_km": 0.137
+  },
+  "report": {
+    "categories": {},
+    "combined": null,
+    "elec": {
+      "drive": {
+        "amount": 213.1,
+        "distance": 1371.0,
+        "err100": 0.6,
+        "per100": 15.54,
+        "quality": "A"
+      },
+      "idle": {
+        "amount": 19.67,
+        "count": 7,
+        "days": 5.8,
+        "per_day": 3.37,
+        "share": 0.085
+      },
+      "overall": {
+        "amount": 232.77,
+        "distance": 1371.0,
+        "err100": 1.43,
+        "per100": 16.98,
+        "quality": "A"
+      }
+    },
+    "elec_cents": 10184,
+    "elec_count": 4,
+    "elec_kwh": 226.3,
+    "energy_cents": 10184,
+    "energy_cost_per_km": 0.08,
+    "from": "2026-10-01",
+    "fuel": null,
+    "fuel_cents": 0,
+    "fuel_count": 0,
+    "fuel_l": 0.0,
+    "home_share": 1.0,
+    "mileage": 1281.0,
+    "other_cents": 0,
+    "summary_cents": 0,
+    "to": "2026-10-31",
+    "total_cents": 10184,
+    "total_cost_per_km": 0.08
+  },
+  "sentence": "比上月少跑了 21%，每公里能源成本降到 ¥0.08，家充占比 100%。"
+}

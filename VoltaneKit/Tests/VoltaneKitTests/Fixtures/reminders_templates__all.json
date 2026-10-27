@@ -1,0 +1,65 @@
+[
+  {
+    "hint": "记录保险费用时会自动更新到期日",
+    "interval_months": 12,
+    "key": "insurance",
+    "lead_days": 30,
+    "title": "保险到期"
+  },
+  {
+    "hint": "6 年内新车一般 2 年申领一次标志，以当地规定为准",
+    "interval_months": 24,
+    "key": "inspection",
+    "lead_days": 30,
+    "title": "年检"
+  },
+  {
+    "ice_km": 7500,
+    "interval_km": 10000,
+    "interval_months": 12,
+    "key": "maintenance",
+    "lead_days": 30,
+    "lead_km": 800,
+    "title": "保养"
+  },
+  {
+    "interval_km": 50000,
+    "interval_months": 60,
+    "key": "tires",
+    "lead_days": 30,
+    "lead_km": 2000,
+    "title": "轮胎检查/更换"
+  },
+  {
+    "interval_months": 24,
+    "key": "brake_fluid",
+    "lead_days": 30,
+    "title": "更换刹车油"
+  },
+  {
+    "interval_km": 20000,
+    "interval_months": 12,
+    "key": "cabin_filter",
+    "lead_days": 15,
+    "lead_km": 1000,
+    "title": "更换空调滤芯"
+  },
+  {
+    "interval_months": 36,
+    "key": "battery_12v",
+    "lead_days": 30,
+    "title": "12V 小电瓶检查"
+  },
+  {
+    "interval_months": 1,
+    "key": "loan",
+    "lead_days": 3,
+    "title": "车贷还款"
+  },
+  {
+    "key": "license",
+    "lead_days": 90,
+    "personal": true,
+    "title": "驾驶证换证"
+  }
+]

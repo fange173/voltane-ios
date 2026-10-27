@@ -1,0 +1,13 @@
+{
+  "color": "#0EA5E9",
+  "cookie_secure": false,
+  "expires_at": "2027-01-25T12:54:21Z",
+  "id": 1,
+  "is_admin": true,
+  "must_change_password": false,
+  "name": "管理员",
+  "role": "admin",
+  "settings": {},
+  "token": "FIXTURE-TOKEN",
+  "username": "admin"
+}

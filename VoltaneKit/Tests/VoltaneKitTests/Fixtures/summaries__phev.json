@@ -1,0 +1,33 @@
+[
+  {
+    "diff": {
+      "elec_cents": 45500,
+      "elec_estimated": false,
+      "elec_kwh": 1250.0,
+      "fuel_cents": 30000,
+      "fuel_estimated": true,
+      "fuel_l": 39.47,
+      "mode": "extra",
+      "recorded_elec_cents": 0,
+      "recorded_elec_kwh": 0,
+      "recorded_fuel_cents": 0,
+      "recorded_fuel_l": 0,
+      "warnings": []
+    },
+    "elec_cents": 45500,
+    "elec_kwh": 1250.0,
+    "elec_price": null,
+    "end_date": "2026-06-28",
+    "end_odometer_km": null,
+    "fuel_cents": 30000,
+    "fuel_liters": null,
+    "fuel_price": 7.6,
+    "id": 1,
+    "mode": "extra",
+    "note": "[demo] 历史汇总",
+    "start_date": "2026-01-01",
+    "start_odometer_km": null,
+    "vehicle_id": 1,
+    "version": 1
+  }
+]

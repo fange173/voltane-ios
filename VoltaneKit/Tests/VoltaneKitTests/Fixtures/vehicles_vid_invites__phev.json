@@ -1,0 +1,24 @@
+[
+  {
+    "allow_signup": false,
+    "code": "Q6RS287G",
+    "expires_at": null,
+    "id": 2,
+    "last_used_at": null,
+    "max_uses": null,
+    "role": "editor",
+    "role_label": "共同记录",
+    "used_count": 0
+  },
+  {
+    "allow_signup": false,
+    "code": "GP9GYPQV",
+    "expires_at": "2026-11-03T12:54",
+    "id": 1,
+    "last_used_at": null,
+    "max_uses": 3,
+    "role": "viewer",
+    "role_label": "只看",
+    "used_count": 0
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "color": "#0EA5E9",
+    "id": 1,
+    "is_me": true,
+    "joined_at": "2026-10-27T12:54",
+    "name": "管理员",
+    "role": "owner",
+    "role_label": "车主",
+    "username": "admin"
+  },
+  {
+    "color": "#10B981",
+    "id": 2,
+    "is_me": false,
+    "joined_at": "2026-10-27T12:54",
+    "name": "家人",
+    "role": "editor",
+    "role_label": "共同记录",
+    "username": "member208f"
+  }
+]

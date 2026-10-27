@@ -1,0 +1,22 @@
+[
+  {
+    "color": "#0EA5E9",
+    "created_at": "2026-10-27T12:54",
+    "id": 1,
+    "is_active": true,
+    "name": "管理员",
+    "role": "admin",
+    "username": "admin",
+    "vehicle_count": 3
+  },
+  {
+    "color": "#10B981",
+    "created_at": "2026-10-27T12:54",
+    "id": 2,
+    "is_active": true,
+    "name": "家人",
+    "role": "member",
+    "username": "member208f",
+    "vehicle_count": 1
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "amount_cents": 386000,
+  "can_delete": true,
+  "can_edit": true,
+  "category": "insurance",
+  "client_id": null,
+  "created_by": {
+    "color": "#0EA5E9",
+    "id": 1,
+    "name": "管理员",
+    "username": "admin"
+  },
+  "deleted_at": null,
+  "id": 6,
+  "note": "[demo]",
+  "occurred_at": "2025-12-31T11:00",
+  "odometer_km": null,
+  "period_end": "2026-12-30",
+  "period_start": "2025-12-31",
+  "sub_items": [
+    {
+      "cents": 95000,
+      "name": "交强险"
+    },
+    {
+      "cents": 291000,
+      "name": "商业险"
+    }
+  ],
+  "title": "首年保险",
+  "vehicle_id": 1,
+  "vendor": "",
+  "version": 1
+}

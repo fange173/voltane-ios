@@ -1,0 +1,150 @@
+{
+  "categories": [
+    {
+      "cents": 43484,
+      "count": 12,
+      "key": "elec",
+      "label": "充电",
+      "share": 1.0
+    }
+  ],
+  "cost_per_km": 0.116,
+  "from": "2026-08-13",
+  "mileage": 3747.0,
+  "months": [
+    {
+      "cost_per_km": 0.131,
+      "cumulative": 11200,
+      "elec": 11200,
+      "fuel": 0,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 854.6,
+      "month": "2026-08",
+      "other": 0,
+      "summary": 0,
+      "total": 11200
+    },
+    {
+      "cost_per_km": 0.137,
+      "cumulative": 33300,
+      "elec": 22100,
+      "fuel": 0,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 1611.4,
+      "month": "2026-09",
+      "other": 0,
+      "summary": 0,
+      "total": 22100
+    },
+    {
+      "cost_per_km": 0.08,
+      "cumulative": 43484,
+      "elec": 10184,
+      "fuel": 0,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 1281.0,
+      "month": "2026-10",
+      "other": 0,
+      "summary": 0,
+      "total": 10184
+    }
+  ],
+  "places": [
+    {
+      "avg_price": 0.45,
+      "cents": 21916,
+      "count": 9,
+      "kind": "charge",
+      "name": "小区充电桩"
+    },
+    {
+      "avg_price": 1.6,
+      "cents": 21568,
+      "count": 3,
+      "kind": "charge",
+      "name": "超充站"
+    }
+  ],
+  "prices": {
+    "elec": [
+      {
+        "group": "dc",
+        "price": 1.6,
+        "ts": "2026-08-18T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-08-25T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-08-30T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-09-06T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "dc",
+        "price": 1.6,
+        "ts": "2026-09-13T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "dc",
+        "price": 1.6,
+        "ts": "2026-09-19T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-09-24T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-09-29T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-10-04T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-10-12T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-10-17T21:00",
+        "vehicle_id": 2
+      },
+      {
+        "group": "home",
+        "price": 0.45,
+        "ts": "2026-10-24T21:00",
+        "vehicle_id": 2
+      }
+    ],
+    "fuel": []
+  },
+  "to": "2026-10-27",
+  "total_cents": 43484
+}

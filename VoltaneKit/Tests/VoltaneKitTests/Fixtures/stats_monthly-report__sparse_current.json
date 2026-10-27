@@ -1,0 +1,64 @@
+{
+  "month": "2026-10",
+  "prev": {
+    "categories": {},
+    "combined": null,
+    "elec": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "elec_cents": 0,
+    "elec_count": 0,
+    "elec_kwh": 0.0,
+    "energy_cents": 0,
+    "energy_cost_per_km": null,
+    "from": "2026-09-01",
+    "fuel": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "fuel_cents": 0,
+    "fuel_count": 0,
+    "fuel_l": 0.0,
+    "home_share": null,
+    "mileage": 0.0,
+    "other_cents": 0,
+    "summary_cents": 0,
+    "to": "2026-09-30",
+    "total_cents": 0,
+    "total_cost_per_km": null
+  },
+  "report": {
+    "categories": {},
+    "combined": null,
+    "elec": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "elec_cents": 0,
+    "elec_count": 2,
+    "elec_kwh": 0.0,
+    "energy_cents": 0,
+    "energy_cost_per_km": null,
+    "from": "2026-10-01",
+    "fuel": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "fuel_cents": 0,
+    "fuel_count": 0,
+    "fuel_l": 0.0,
+    "home_share": null,
+    "mileage": 0.0,
+    "other_cents": 0,
+    "summary_cents": 0,
+    "to": "2026-10-31",
+    "total_cents": 0,
+    "total_cost_per_km": null
+  },
+  "sentence": "这个月还没有记录。"
+}

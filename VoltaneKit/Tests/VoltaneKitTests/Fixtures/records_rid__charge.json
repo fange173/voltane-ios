@@ -1,0 +1,100 @@
+{
+  "amount_cents": 495,
+  "can_delete": true,
+  "can_edit": true,
+  "charge_kwh": 16.5,
+  "charge_minutes": 300,
+  "charge_to_limit": false,
+  "charge_type": "home",
+  "charge_unit_price": 0.3,
+  "client_id": null,
+  "created_at": "2026-10-27T12:54",
+  "created_by": {
+    "color": "#0EA5E9",
+    "id": 1,
+    "name": "管理员",
+    "username": "admin"
+  },
+  "deleted_at": null,
+  "energy_fee_cents": null,
+  "estimated_fields": [],
+  "extra_fee_cents": null,
+  "fuel_grade": null,
+  "fuel_is_full": false,
+  "fuel_level_after_pct": null,
+  "fuel_level_before_pct": null,
+  "fuel_liters": null,
+  "fuel_unit_price": null,
+  "id": 61,
+  "kind": "charge",
+  "lat": null,
+  "lng": null,
+  "missed_before": false,
+  "note": "[demo]",
+  "occurred_at": "2026-10-24T22:30",
+  "odometer_estimated": false,
+  "odometer_km": 16037.0,
+  "place_id": 1,
+  "place_name": "家里车位",
+  "segments": [
+    {
+      "amount": 16.151,
+      "anomaly": null,
+      "cost_cents": 485,
+      "cost_per_km": 0.028,
+      "days": 2.0,
+      "distance": 172.0,
+      "end_id": 61,
+      "end_odo": 16037.0,
+      "end_ts": "2026-10-24T22:30",
+      "energy": "elec",
+      "err": 0.399,
+      "err100": 0.23,
+      "excluded": false,
+      "explain": {
+        "distance": 172.0,
+        "parts": [
+          {
+            "added": -0.0,
+            "amount": 16.15,
+            "end": "SOC 19%",
+            "end_value": 3.79,
+            "energy": "elec",
+            "k": 0.1994,
+            "start": "SOC 100%",
+            "start_value": 19.94,
+            "unit": "kWh"
+          }
+        ]
+      },
+      "kind": "drive",
+      "per100": 9.39,
+      "per_day": null,
+      "quality": "A",
+      "record_ids": [
+        60,
+        61
+      ],
+      "start_id": 60,
+      "start_odo": 15865.0,
+      "start_ts": "2026-10-22T22:30",
+      "status": "ok",
+      "tag": "normal"
+    }
+  ],
+  "service_fee_cents": null,
+  "snapshot_tag": null,
+  "soc_after_pct": 100.0,
+  "soc_before_pct": 19.0,
+  "source": "manual",
+  "status": "done",
+  "updated_at": "2026-10-27T12:54",
+  "updated_by": {
+    "color": "#0EA5E9",
+    "id": 1,
+    "name": "管理员",
+    "username": "admin"
+  },
+  "vehicle_id": 1,
+  "version": 1
+}

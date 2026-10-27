@@ -1,0 +1,62 @@
+{
+  "daily_km": null,
+  "in_progress": [],
+  "k": 0.2033,
+  "k_source": "default",
+  "last": {
+    "amount_cents": null,
+    "charge_kwh": null,
+    "charge_minutes": null,
+    "charge_to_limit": false,
+    "charge_type": "home",
+    "charge_unit_price": null,
+    "client_id": null,
+    "created_at": "2026-10-27T12:54",
+    "created_by": null,
+    "deleted_at": null,
+    "energy_fee_cents": null,
+    "estimated_fields": [],
+    "extra_fee_cents": null,
+    "fuel_grade": null,
+    "fuel_is_full": false,
+    "fuel_level_after_pct": null,
+    "fuel_level_before_pct": null,
+    "fuel_liters": null,
+    "fuel_unit_price": null,
+    "id": 95,
+    "kind": "charge",
+    "lat": null,
+    "lng": null,
+    "missed_before": false,
+    "note": "[demo]",
+    "occurred_at": "2026-10-26T21:00",
+    "odometer_estimated": false,
+    "odometer_km": null,
+    "place_id": null,
+    "place_name": null,
+    "service_fee_cents": null,
+    "snapshot_tag": null,
+    "soc_after_pct": 100.0,
+    "soc_before_pct": 25.0,
+    "source": "manual",
+    "status": "done",
+    "updated_at": "2026-10-27T12:54",
+    "updated_by": null,
+    "vehicle_id": 3,
+    "version": 1
+  },
+  "last_fuel_pct": null,
+  "last_odo": 23400.0,
+  "last_odo_ts": "2026-10-21T08:00",
+  "last_soc": 100,
+  "odo_points": [
+    [
+      "2026-10-21T08:00",
+      23400.0
+    ]
+  ],
+  "places": [],
+  "recent_notes": [
+    "[demo]"
+  ]
+}

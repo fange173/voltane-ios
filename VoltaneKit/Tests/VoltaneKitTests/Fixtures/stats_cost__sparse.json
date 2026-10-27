@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "cents": 0,
+      "count": 2,
+      "key": "elec",
+      "label": "充电",
+      "share": null
+    }
+  ],
+  "cost_per_km": null,
+  "from": "2026-10-21",
+  "mileage": 0.0,
+  "months": [
+    {
+      "cost_per_km": null,
+      "cumulative": 0,
+      "elec": 0,
+      "fuel": 0,
+      "insurance": 0,
+      "maintenance": 0,
+      "mileage": 0.0,
+      "month": "2026-10",
+      "other": 0,
+      "summary": 0,
+      "total": 0
+    }
+  ],
+  "places": [],
+  "prices": {
+    "elec": [],
+    "fuel": []
+  },
+  "to": "2026-10-27",
+  "total_cents": 0
+}

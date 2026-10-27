@@ -1,0 +1,158 @@
+{
+  "items": [
+    {
+      "amount_cents": 8500,
+      "category": "toll",
+      "client_id": null,
+      "created_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "deleted_at": null,
+      "id": 5,
+      "note": "[demo]",
+      "occurred_at": "2026-10-17T11:00",
+      "odometer_km": null,
+      "period_end": null,
+      "period_start": null,
+      "sub_items": [],
+      "title": "京沪高速",
+      "type": "expense",
+      "vehicle_id": 1,
+      "vendor": "",
+      "version": 1
+    },
+    {
+      "amount_cents": 12900,
+      "category": "accessory",
+      "client_id": null,
+      "created_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "deleted_at": null,
+      "id": 4,
+      "note": "[demo]",
+      "occurred_at": "2026-10-07T11:00",
+      "odometer_km": null,
+      "period_end": null,
+      "period_start": null,
+      "sub_items": [],
+      "title": "行车记录仪",
+      "type": "expense",
+      "vehicle_id": 1,
+      "vendor": "",
+      "version": 1
+    },
+    {
+      "amount_cents": 2000,
+      "category": "parking",
+      "client_id": null,
+      "created_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "deleted_at": null,
+      "id": 3,
+      "note": "[demo]",
+      "occurred_at": "2026-09-17T11:00",
+      "odometer_km": null,
+      "period_end": null,
+      "period_start": null,
+      "sub_items": [],
+      "title": "商场停车",
+      "type": "expense",
+      "vehicle_id": 1,
+      "vendor": "",
+      "version": 1
+    },
+    {
+      "amount_cents": 3500,
+      "category": "wash",
+      "client_id": null,
+      "created_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "deleted_at": null,
+      "id": 2,
+      "note": "[demo]",
+      "occurred_at": "2026-08-18T11:00",
+      "odometer_km": null,
+      "period_end": null,
+      "period_start": null,
+      "sub_items": [],
+      "title": "精洗",
+      "type": "expense",
+      "vehicle_id": 1,
+      "vendor": "",
+      "version": 1
+    },
+    {
+      "amount_cents": 48000,
+      "category": "maintenance",
+      "client_id": null,
+      "created_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "deleted_at": null,
+      "id": 1,
+      "note": "[demo]",
+      "occurred_at": "2026-07-24T11:00",
+      "odometer_km": 10500.0,
+      "period_end": null,
+      "period_start": null,
+      "sub_items": [],
+      "title": "首保",
+      "type": "expense",
+      "vehicle_id": 1,
+      "vendor": "比亚迪 4S 店",
+      "version": 1
+    },
+    {
+      "amount_cents": 386000,
+      "category": "insurance",
+      "client_id": null,
+      "created_by": {
+        "color": "#0EA5E9",
+        "id": 1,
+        "name": "管理员",
+        "username": "admin"
+      },
+      "deleted_at": null,
+      "id": 6,
+      "note": "[demo]",
+      "occurred_at": "2025-12-31T11:00",
+      "odometer_km": null,
+      "period_end": "2026-12-30",
+      "period_start": "2025-12-31",
+      "sub_items": [
+        {
+          "cents": 95000,
+          "name": "交强险"
+        },
+        {
+          "cents": 291000,
+          "name": "商业险"
+        }
+      ],
+      "title": "首年保险",
+      "type": "expense",
+      "vehicle_id": 1,
+      "vendor": "",
+      "version": 1
+    }
+  ],
+  "next": null
+}

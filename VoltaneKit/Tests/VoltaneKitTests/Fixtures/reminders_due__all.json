@@ -1,0 +1,32 @@
+{
+  "count": 1,
+  "items": [
+    {
+      "current_odo": 16037.0,
+      "date_progress": null,
+      "days_left": 12,
+      "due_date": "2026-11-08",
+      "due_odometer_km": null,
+      "eta_date": null,
+      "id": 3,
+      "interval_km": null,
+      "interval_months": null,
+      "is_active": true,
+      "km_left": null,
+      "km_progress": null,
+      "last_done_at": null,
+      "last_done_odometer_km": null,
+      "lead_days": 30,
+      "lead_km": 500.0,
+      "muted": false,
+      "next_date": "2026-11-08",
+      "note": "",
+      "personal": false,
+      "status": "soon",
+      "template_key": "inspection",
+      "title": "年检",
+      "vehicle_id": 1,
+      "vehicle_name": "秦PLUS（演示）"
+    }
+  ]
+}

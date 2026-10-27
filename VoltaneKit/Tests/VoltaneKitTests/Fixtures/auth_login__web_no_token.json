@@ -1,0 +1,11 @@
+{
+  "color": "#0EA5E9",
+  "cookie_secure": false,
+  "id": 1,
+  "is_admin": true,
+  "must_change_password": false,
+  "name": "管理员",
+  "role": "admin",
+  "settings": {},
+  "username": "admin"
+}

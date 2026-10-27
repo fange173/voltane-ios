@@ -1,0 +1,79 @@
+{
+  "capacity_est": 73.8,
+  "k": 0.8196,
+  "k_ac": 0.8198,
+  "k_dc": 0.779,
+  "samples": [
+    {
+      "capacity_est": 73.8,
+      "charge_type": "home",
+      "k": 0.82,
+      "record_id": 69,
+      "ts": "2026-08-30T21:00"
+    },
+    {
+      "capacity_est": 73.7,
+      "charge_type": "home",
+      "k": 0.8194,
+      "record_id": 72,
+      "ts": "2026-09-06T21:00"
+    },
+    {
+      "capacity_est": 70.1,
+      "charge_type": "dc",
+      "k": 0.7785,
+      "record_id": 73,
+      "ts": "2026-09-13T21:00"
+    },
+    {
+      "capacity_est": 70.2,
+      "charge_type": "dc",
+      "k": 0.7796,
+      "record_id": 76,
+      "ts": "2026-09-19T21:00"
+    },
+    {
+      "capacity_est": 73.8,
+      "charge_type": "home",
+      "k": 0.8203,
+      "record_id": 77,
+      "ts": "2026-09-24T21:00"
+    },
+    {
+      "capacity_est": 73.8,
+      "charge_type": "home",
+      "k": 0.8197,
+      "record_id": 80,
+      "ts": "2026-09-29T21:00"
+    },
+    {
+      "capacity_est": 73.8,
+      "charge_type": "home",
+      "k": 0.8203,
+      "record_id": 81,
+      "ts": "2026-10-04T21:00"
+    },
+    {
+      "capacity_est": 73.7,
+      "charge_type": "home",
+      "k": 0.8194,
+      "record_id": 86,
+      "ts": "2026-10-12T21:00"
+    },
+    {
+      "capacity_est": 73.9,
+      "charge_type": "home",
+      "k": 0.8206,
+      "record_id": 87,
+      "ts": "2026-10-17T21:00"
+    },
+    {
+      "capacity_est": 73.8,
+      "charge_type": "home",
+      "k": 0.8194,
+      "record_id": 90,
+      "ts": "2026-10-24T21:00"
+    }
+  ],
+  "source": "learned"
+}

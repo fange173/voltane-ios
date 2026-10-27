@@ -1,0 +1,277 @@
+{
+  "best_month": {
+    "elec": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "energy_cents": 22500,
+    "fuel": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "mileage": 34.0,
+    "month": "2025-12",
+    "total_cents": 408500
+  },
+  "months": [
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2025-01",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2025-02",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2025-03",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2025-04",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2025-05",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2025-06",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2025-07",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2025-08",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2025-09",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2025-10",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 0,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 0.0,
+      "month": "2025-11",
+      "total_cents": 0
+    },
+    {
+      "elec": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "energy_cents": 22500,
+      "fuel": {
+        "drive": null,
+        "idle": null,
+        "overall": null
+      },
+      "mileage": 34.0,
+      "month": "2025-12",
+      "total_cents": 408500
+    }
+  ],
+  "report": {
+    "categories": {
+      "insurance": 386000
+    },
+    "combined": null,
+    "elec": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "elec_cents": 0,
+    "elec_count": 0,
+    "elec_kwh": 0.0,
+    "energy_cents": 22500,
+    "energy_cost_per_km": 6.618,
+    "from": "2025-01-01",
+    "fuel": {
+      "drive": null,
+      "idle": null,
+      "overall": null
+    },
+    "fuel_cents": 22500,
+    "fuel_count": 1,
+    "fuel_l": 30.0,
+    "home_share": null,
+    "mileage": 34.0,
+    "other_cents": 386000,
+    "summary_cents": 0,
+    "to": "2025-12-31",
+    "total_cents": 408500,
+    "total_cost_per_km": 120.147
+  },
+  "top_item": {
+    "amount_cents": 386000,
+    "category": "insurance",
+    "client_id": null,
+    "created_by": null,
+    "deleted_at": null,
+    "id": 6,
+    "note": "[demo]",
+    "occurred_at": "2025-12-31T11:00",
+    "odometer_km": null,
+    "period_end": "2026-12-30",
+    "period_start": "2025-12-31",
+    "sub_items": [
+      {
+        "cents": 95000,
+        "name": "交强险"
+      },
+      {
+        "cents": 291000,
+        "name": "商业险"
+      }
+    ],
+    "title": "首年保险",
+    "type": "expense",
+    "vehicle_id": 1,
+    "vendor": "",
+    "version": 1
+  },
+  "year": 2025,
+  "years": [
+    2025,
+    2026
+  ]
+}
