@@ -38,9 +38,9 @@ extension View {
         modifier(VGlassIDModifier(id: id, namespace: namespace))
     }
 
-    /// 向下滚动时标签栏收起。
-    func vTabBarMinimize() -> some View {
-        if #available(iOS 26, *) { return AnyView(self.tabBarMinimizeBehavior(.onScrollDown)) } else { return AnyView(self) }
+    /// 标签栏始终完整显示，滚动时不收起。
+    func vTabBarFixed() -> some View {
+        if #available(iOS 26, *) { return AnyView(self.tabBarMinimizeBehavior(.never)) } else { return AnyView(self) }
     }
 
     /// 滚动内容靠近顶部导航栏时的柔和边缘。

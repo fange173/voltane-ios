@@ -65,8 +65,7 @@ struct JoinVehicleView: View {
             await app.loadVehicles()
             app.selectVehicle(r.vehicleId)
             app.toasts.show(r.already == true ? "你已经是这辆车的成员" : "已加入「\(preview?.vehicleName ?? "")」")
-            app.tab = .home
-            dismiss()
+            app.finishPushed(.join, dismiss: dismiss)
         } catch { app.toasts.error(error) }
     }
 }

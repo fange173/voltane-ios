@@ -163,4 +163,63 @@ public enum API {
     public static func dismissHint(vehicleId: Int, key: String) throws -> Endpoint<OKResponse> {
         try Endpoint(.post, "/api/vehicles/\(vehicleId)/hints/dismiss", json: DismissBody(key: key))
     }
+
+    // MARK: 车辆管理
+    public static func vehicleHealth(vehicleId: Int) -> Endpoint<VehicleHealth> { Endpoint(.get, "/api/vehicles/\(vehicleId)/health") }
+    public static func summaries(vehicleId: Int) -> Endpoint<[PeriodSummary]> {
+        Endpoint(.get, "/api/summaries", query: [URLQueryItem("vehicle_id", vehicleId)])
+    }
+    public static func invites(vehicleId: Int) -> Endpoint<[Invite]> { Endpoint(.get, "/api/vehicles/\(vehicleId)/invites") }
+
+    public static func createVehicle(_ body: VehicleCreatePayload) throws -> Endpoint<Vehicle> { try Endpoint(.post, "/api/vehicles", json: body) }
+    public static func updateVehicle(id: Int, _ body: VehiclePayload) throws -> Endpoint<Vehicle> { try Endpoint(.put, "/api/vehicles/\(id)", json: body) }
+
+    public struct DeliveryBody: Encodable, Sendable {
+        public var odometerKm: Double
+        public var deliveryDate: LocalDateTime?
+        enum Keys: String, CodingKey { case odometerKm = "odometer_km", deliveryDate = "delivery_date" }
+        public func encode(to encoder: Encoder) throws {
+            var c = encoder.container(keyedBy: Keys.self)
+            try c.encode(odometerKm, forKey: .odometerKm)
+            try c.encode(deliveryDate.map { LocalDateTime(year: $0.year, month: $0.month, day: $0.day, hasTime: false) }, forKey: .deliveryDate)
+        }
+    }
+
+    public static func fixDelivery(vehicleId: Int, odometerKm: Double, deliveryDate: LocalDateTime?) throws -> Endpoint<OKResponse> {
+        try Endpoint(.post, "/api/vehicles/\(vehicleId)/delivery", json: DeliveryBody(odometerKm: odometerKm, deliveryDate: deliveryDate))
+    }
+
+    public struct ArchiveBody: Encodable, Sendable { public var archived: Bool }
+    public static func archiveVehicle(id: Int, archived: Bool) throws -> Endpoint<OKResponse> {
+        try Endpoint(.post, "/api/vehicles/\(id)/archive", json: ArchiveBody(archived: archived))
+    }
+
+    public struct ConfirmNameBody: Encodable, Sendable { public var confirmName: String }
+    public static func deleteVehicle(id: Int, confirmName: String) throws -> Endpoint<OKResponse> {
+        try Endpoint(.post, "/api/vehicles/\(id)/delete", json: ConfirmNameBody(confirmName: confirmName))
+    }
+
+    public static func leaveVehicle(id: Int) -> Endpoint<OKResponse> { Endpoint(.post, "/api/vehicles/\(id)/leave") }
+
+    public struct MemberAddBody: Encodable, Sendable { public var username: String; public var role: String }
+    public struct MemberRoleBody: Encodable, Sendable { public var role: String }
+
+    public static func addMember(vehicleId: Int, username: String, role: String) throws -> Endpoint<OKResponse> {
+        try Endpoint(.post, "/api/vehicles/\(vehicleId)/members", json: MemberAddBody(username: username, role: role))
+    }
+    public static func setMemberRole(vehicleId: Int, userId: Int, role: String) throws -> Endpoint<OKResponse> {
+        try Endpoint(.put, "/api/vehicles/\(vehicleId)/members/\(userId)", json: MemberRoleBody(role: role))
+    }
+    public static func removeMember(vehicleId: Int, userId: Int) -> Endpoint<OKResponse> {
+        Endpoint(.delete, "/api/vehicles/\(vehicleId)/members/\(userId)")
+    }
+
+    public static func createInvite(vehicleId: Int, _ body: InviteBody) throws -> Endpoint<Invite> {
+        try Endpoint(.post, "/api/vehicles/\(vehicleId)/invites", json: body)
+    }
+    public static func revokeInvite(id: Int) -> Endpoint<OKResponse> { Endpoint(.delete, "/api/invites/\(id)") }
+
+    public static func createSummary(_ body: SummaryPayload) throws -> Endpoint<PeriodSummary> { try Endpoint(.post, "/api/summaries", json: body) }
+    public static func updateSummary(id: Int, _ body: SummaryPayload) throws -> Endpoint<PeriodSummary> { try Endpoint(.put, "/api/summaries/\(id)", json: body) }
+    public static func deleteSummary(id: Int) -> Endpoint<OKResponse> { Endpoint(.delete, "/api/summaries/\(id)") }
 }

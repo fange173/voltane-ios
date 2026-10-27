@@ -18,7 +18,6 @@ struct VehicleDot: View {
 /// 导航栏左侧的车辆切换器：色点加车名，菜单列出所有车辆。
 struct VehicleSwitcher: View {
     @Environment(AppModel.self) private var app
-    @State private var showManage = false
 
     var body: some View {
         Menu {
@@ -31,7 +30,8 @@ struct VehicleSwitcher: View {
                 }
             }
             Divider()
-            Button("管理车辆", systemImage: "car.2.fill") { showManage = true }
+            Button("管理车辆", systemImage: "car.2.fill") { app.mePath = [.vehicle]; app.tab = .me }
+            Button("添加车辆", systemImage: "plus") { app.mePath = [.newVehicle]; app.tab = .me }
         } label: {
             HStack(spacing: 6) {
                 if let v = app.currentVehicle {
@@ -45,9 +45,5 @@ struct VehicleSwitcher: View {
             }
         }
         .accessibilityLabel("当前车辆：\(app.currentVehicle?.name ?? "无")，切换车辆")
-        .sheet(isPresented: $showManage) {
-            NavigationStack { ComingSoonView(title: "车辆", systemImage: "car.fill", text: "车辆管理和新车向导在后续阶段加入。") }
-                .presentationDetents([.medium, .large])
-        }
     }
 }

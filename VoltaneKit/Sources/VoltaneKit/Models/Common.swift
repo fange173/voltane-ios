@@ -5,6 +5,10 @@ public struct UserBrief: Codable, Sendable, Hashable, Identifiable {
     public let username: String?
     public let name: String
     public let color: String?
+
+    public init(id: Int, username: String?, name: String, color: String?) {
+        self.id = id; self.username = username; self.name = name; self.color = color
+    }
 }
 
 /// 登录用户。`settings` 是服务端合并保存的偏好（主题、默认车辆、付款人开关等）。

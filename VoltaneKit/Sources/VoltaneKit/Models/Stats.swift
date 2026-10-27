@@ -144,7 +144,16 @@ public struct PeriodSummary: Decodable, Sendable, Identifiable {
     public var elecPrice: Double?
     public var note: String?
     public var version: Int?
-    public var diff: JSONValue?
+    public var diff: Diff?
+
+    /// 与同期逐条记录的对比；`warnings` 非空表示汇总总量小于已记录量。
+    public struct Diff: Decodable, Sendable {
+        public var recordedFuelL: Double?
+        public var recordedElecKwh: Double?
+        public var fuelL: Double?
+        public var elecKwh: Double?
+        public var warnings: [String]?
+    }
 }
 
 public struct OdometerLatest: Decodable, Sendable { public let latest: Double? }
@@ -167,6 +176,9 @@ public struct VehicleHealth: Decodable, Sendable {
         public var afterId: Int?
         public var beforeId: Int?
         public var kind: String?
+        public var recordId: Int?
+        public var odometerKm: Double?
+        public var deliveryDate: LocalDateTime?
         public var id: String { key }
     }
 

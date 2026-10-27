@@ -42,6 +42,9 @@ struct ReminderCompletion: Identifiable {
 
 enum AppTab: Hashable { case home, records, add, stats, me }
 
+/// 「我的」页签导航栈里的页面，别的页签可以直接设置 `mePath` 跳过来。
+enum MeRoute: Hashable { case vehicle, newVehicle, join }
+
 @MainActor @Observable
 final class AppModel {
     let settings = AppSettings()
@@ -63,6 +66,7 @@ final class AppModel {
     /// 记录、费用增删改后加 1，各页面用 `.task(id:)` 重新加载。
     private(set) var dataVersion = 0
     var tab: AppTab = .home
+    var mePath: [MeRoute] = []
     /// 保存保险以外的费用后，服务端建议顺手完成的提醒，等用户确认。
     var pendingReminderCompletions: [ReminderCompletion] = []
     var sheet: ActiveSheet?
@@ -179,7 +183,7 @@ final class AppModel {
         tokens.clear()
         await cache.clear()
         user = nil; vehicles = []; currentVehicleId = nil; dueCount = 0
-        sheet = nil; tab = .home
+        sheet = nil; tab = .home; mePath = []
         phase = .needsLogin
     }
 
@@ -224,6 +228,19 @@ final class AppModel {
     }
 
     func bump() { dataVersion += 1 }
+
+    /// 关闭推入的页面并回到概览。页面在「我的」栈里时直接清空 `mePath`：
+    /// 不能用 dismiss，切走标签后它要等「我的」再次显示才执行，会把那时新推入的页面弹掉。
+    func finishPushed(_ route: MeRoute, dismiss: DismissAction) {
+        if mePath.contains(route) { mePath = [] } else { dismiss() }
+        tab = .home
+    }
+
+    /// 车辆、成员、参数变化后刷新车辆列表和各页面。
+    func reloadAfterVehicleChange() async {
+        await loadVehicles()
+        bump()
+    }
 
     func savePref(_ key: String, _ value: JSONValue) async {
         guard var u = user else { return }

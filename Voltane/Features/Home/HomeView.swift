@@ -31,10 +31,11 @@ struct HomeView: View {
             ContentUnavailableView {
                 Label("欢迎使用油电簿", systemImage: "bolt.car.fill")
             } description: {
-                Text("还没有车辆。可以先在网页版添加车辆后回到这里刷新，或用家人发来的邀请码加入。")
+                Text("还没有车辆。添加你的车，或用家人发来的邀请码加入。")
             } actions: {
-                NavigationLink { JoinVehicleView() } label: { Label("用邀请码加入", systemImage: "key.fill") }.buttonStyle(.vGlassProminent)
-                Button("刷新") { Task { await app.loadVehicles() } }.buttonStyle(.vGlass)
+                NavigationLink { VehicleWizardView() } label: { Label("添加我的车", systemImage: "plus") }.buttonStyle(.vGlassProminent)
+                NavigationLink { JoinVehicleView() } label: { Label("用邀请码加入", systemImage: "key.fill") }.buttonStyle(.vGlass)
+                Button("刷新") { Task { await app.loadVehicles() } }.buttonStyle(.borderless)
             }
         }
     }

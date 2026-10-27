@@ -34,9 +34,9 @@ struct ModernTabRoot: View {
             Tab("记录", systemImage: "list.bullet", value: AppTab.records) { TabContent { RecordsView() } }
             Tab(value: AppTab.add) { Color.clear } label: { AddTabIcon() }
             Tab("统计", systemImage: "chart.bar.xaxis", value: AppTab.stats) { TabContent { StatsPlaceholderView() } }
-            Tab("我的", systemImage: "person.crop.circle", value: AppTab.me) { TabContent { MeView() } }
+            Tab("我的", systemImage: "person.crop.circle", value: AppTab.me) { TabContent(path: $app.mePath) { MeView() } }
         }
-        .vTabBarMinimize()
+        .vTabBarFixed()
         .modifier(AddTabIntercept())
         .modifier(SheetRouter())
     }
@@ -66,25 +66,31 @@ struct LegacyTabRoot: View {
             TabContent { RecordsView() }.tabItem { Label("记录", systemImage: "list.bullet") }.tag(AppTab.records)
             Color.clear.tabItem { AddTabIcon() }.tag(AppTab.add)
             TabContent { StatsPlaceholderView() }.tabItem { Label("统计", systemImage: "chart.bar.xaxis") }.tag(AppTab.stats)
-            TabContent { MeView() }.tabItem { Label("我的", systemImage: "person.crop.circle") }.tag(AppTab.me)
+            TabContent(path: $app.mePath) { MeView() }.tabItem { Label("我的", systemImage: "person.crop.circle") }.tag(AppTab.me)
         }
         .modifier(AddTabIntercept())
         .modifier(SheetRouter())
     }
 }
 
-/// 每个标签页的外壳：导航栈、车辆切换器、提醒铃铛。
+/// 每个标签页的外壳：导航栈、车辆切换器、提醒铃铛。传入 `path` 时导航栈由 AppModel 控制。
 struct TabContent<Content: View>: View {
-    @Environment(AppModel.self) private var app
+    var path: Binding<[MeRoute]>?
     @ViewBuilder var content: Content
 
     var body: some View {
-        NavigationStack {
-            content
-                .toolbar { ToolbarItem(placement: .topBarLeading) { VehicleSwitcher() }
-                    ToolbarItem(placement: .topBarTrailing) { BellButton() } }
-                .navigationBarTitleDisplayMode(.inline)
+        if let path {
+            NavigationStack(path: path) { root }
+        } else {
+            NavigationStack { root }
         }
+    }
+
+    private var root: some View {
+        content
+            .toolbar { ToolbarItem(placement: .topBarLeading) { VehicleSwitcher() }
+                ToolbarItem(placement: .topBarTrailing) { BellButton() } }
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 

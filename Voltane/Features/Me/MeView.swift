@@ -1,7 +1,7 @@
 import SwiftUI
 import VoltaneKit
 
-/// 「我的」：账号、显示、加入车辆、服务器地址与退出；其余入口在后续阶段加入。
+/// 「我的」：账号、显示、车辆、加入车辆、服务器地址与退出；其余入口在后续阶段加入。
 struct MeView: View {
     @Environment(AppModel.self) private var app
     @State private var confirmLogoutAll = false
@@ -33,7 +33,11 @@ struct MeView: View {
                     set: { on in Task { await app.savePref("hide_history", .bool(!on)) } }))
             }
             Section("车辆") {
-                NavigationLink { JoinVehicleView() } label: { Label("用邀请码加入车辆", systemImage: "key.fill") }
+                NavigationLink(value: MeRoute.vehicle) {
+                    Label { Text(app.currentVehicle?.name ?? "车辆管理") } icon: { Image(systemName: "car.fill") }
+                }
+                NavigationLink(value: MeRoute.newVehicle) { Label("添加车辆", systemImage: "plus") }
+                NavigationLink(value: MeRoute.join) { Label("用邀请码加入车辆", systemImage: "key.fill") }
             }
             Section("服务器") {
                 LabeledContent("主地址", value: app.server?.primary.absoluteString ?? "–")
@@ -51,6 +55,13 @@ struct MeView: View {
             }
         }
         .navigationTitle("我的")
+        .navigationDestination(for: MeRoute.self) { route in
+            switch route {
+            case .vehicle: VehicleView()
+            case .newVehicle: VehicleWizardView()
+            case .join: JoinVehicleView()
+            }
+        }
         .confirmationDialog("所有设备和浏览器上的登录都会失效", isPresented: $confirmLogoutAll, titleVisibility: .visible) {
             Button("退出所有设备", role: .destructive) { Task { await app.logoutAllDevices() } }
         }
