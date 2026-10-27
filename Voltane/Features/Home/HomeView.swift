@@ -359,9 +359,16 @@ private struct HeroCard: View {
     @ViewBuilder private func footLine(_ parts: [String?]) -> some View {
         let t = parts.compactMap { $0 }
         if !t.isEmpty {
-            VStack(alignment: .leading, spacing: 6) {
-                ForEach(t, id: \.self) { Text($0).font(.caption).foregroundStyle(.secondary).lineLimit(2).fixedSize(horizontal: false, vertical: true) }
+            // 与网页 .hero-foot 一致：一行放得下就横排，否则逐条换行。
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 16) {
+                    ForEach(t, id: \.self) { Text($0).lineLimit(1) }
+                }
+                VStack(alignment: .leading, spacing: 6) {
+                    ForEach(t, id: \.self) { Text($0).lineLimit(2).fixedSize(horizontal: false, vertical: true) }
+                }
             }
+            .font(.caption).foregroundStyle(.secondary)
         }
     }
 
