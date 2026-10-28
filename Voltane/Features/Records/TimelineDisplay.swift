@@ -71,9 +71,14 @@ struct TimelineDisplay {
         guard case .record(let r) = item else { return [] }
         var out: [(String, Tone)] = []
         if r.kind == "fuel" && r.fuelIsFull == true { out.append(("满", .fuel)) }
-        if r.source == "backfill" || r.source == "import" { out.append(("补录", .snapshot)) }
         if r.source == "auto_fix" { out.append(("自动补", .fuel)) }
         return out
+    }
+
+    /// 补录的记录很常见，只用小图标标出，不占文字徽章的位置。
+    var isBackfill: Bool {
+        guard case .record(let r) = item else { return false }
+        return r.source == "backfill" || r.source == "import"
     }
 
     var badges: [Record.Badge] {
@@ -129,6 +134,9 @@ struct RecordRow: View {
                 HStack(spacing: 5) {
                     Text(d.title).font(.body.weight(.medium)).lineLimit(1)
                     ForEach(Array(d.tags.enumerated()), id: \.offset) { Pill(text: $0.element.0, tone: $0.element.1) }
+                    if d.isBackfill {
+                        Image(systemName: "clock.arrow.circlepath").font(.caption2).foregroundStyle(.tertiary).accessibilityLabel("补录")
+                    }
                     if pending { Pill(text: "待同步", tone: .fuel) }
                 }
                 Text(d.subtitle(showDate: showDate)).font(.caption).foregroundStyle(.secondary).lineLimit(1)

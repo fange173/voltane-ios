@@ -55,8 +55,13 @@ public enum Fmt {
     }
 
     /// 较上一期的变化比例；上期为空或 0 时返回 nil。
-    public static func pctChange(_ cur: Double?, _ prev: Double?) -> Double? {
-        guard let cur, let prev, prev != 0 else { return nil }
+    /// 环比的最小基数：上期里程不足 100km 或金额不足 100 元时百分比没有参考意义。
+    public static let minChangeKm = 100.0
+    public static let minChangeCents = 10_000.0
+
+    /// 和上一周期比的变化比例；上期基数小于 min 时返回 nil。
+    public static func pctChange(_ cur: Double?, _ prev: Double?, min: Double = 0) -> Double? {
+        guard let cur, let prev, prev != 0, abs(prev) >= min else { return nil }
         return (cur - prev) / abs(prev)
     }
 

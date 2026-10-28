@@ -12,6 +12,8 @@ struct RecordsView: View {
     @State private var loaded = false
     @State private var failure: String?
     @State private var offline: Date?
+    /// 月份里程用统计接口的口径（按里程表插值分摊），和概览一致。
+    @State private var monthKm: [String: Double] = [:]
 
     private static let filters: [(String, String)] = [
         ("", "全部"), ("fuel", "加油"), ("charge", "充电"), ("snapshot", "快照"), ("expense", "费用"),
@@ -62,7 +64,7 @@ struct RecordsView: View {
                             .onAppear { if item.id == items.last?.id, next != nil { Task { await loadMore(v) } } }
                     }
                 } header: {
-                    HStack { Text(monthTitle(month)).font(.subheadline.weight(.semibold)); Spacer(); Text(summary(arr)).font(.caption).foregroundStyle(.secondary) }
+                    HStack { Text(monthTitle(month)).font(.subheadline.weight(.semibold)); Spacer(); Text(summary(arr, km: monthKm[month])).font(.caption).foregroundStyle(.secondary) }
                         .textCase(nil)
                 }
             }
@@ -91,6 +93,11 @@ struct RecordsView: View {
             if !query.isEmpty { try? await Task.sleep(for: .milliseconds(300)) }
             guard !Task.isCancelled else { return }
             await reload(v)
+        }
+        .task(id: "\(v.id)|\(app.dataVersion)") {
+            if let r = try? await app.client.send(API.statsMileage(vehicleId: v.id)) {
+                monthKm = Dictionary(r.months.compactMap { m in m.km.map { (m.month, $0) } }, uniquingKeysWith: { a, _ in a })
+            }
         }
         .refreshable { await reload(v); await app.flushOutbox() }
     }
@@ -176,7 +183,7 @@ struct RecordsView: View {
         return p.count == 2 ? "\(p[0]) 年 \(Int(p[1]) ?? 0) 月" : key
     }
 
-    private func summary(_ arr: [TimelineItem]) -> String {
+    private func summary(_ arr: [TimelineItem], km: Double?) -> String {
         var cents = 0, fuel = 0.0, kwh = 0.0
         var odos: [Double] = []
         for it in arr {
@@ -192,7 +199,9 @@ struct RecordsView: View {
         var parts = [Fmt.money(cents)]
         if fuel > 0 { parts.append(Fmt.num(fuel, 1) + "L") }
         if kwh > 0 { parts.append(Fmt.num(kwh, 0) + "kWh") }
-        if odos.count > 1, let hi = odos.max(), let lo = odos.min() { parts.append(Fmt.km(hi - lo) + "km") }
+        if let km {
+            if km > 0 { parts.append(Fmt.km(km) + "km") }
+        } else if odos.count > 1, let hi = odos.max(), let lo = odos.min() { parts.append(Fmt.km(hi - lo) + "km") }
         return parts.joined(separator: " · ")
     }
 }

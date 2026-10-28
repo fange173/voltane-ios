@@ -57,6 +57,9 @@ public enum API {
     public static func overview(vehicleId: Int, range: String = "month") -> Endpoint<Overview> {
         Endpoint(.get, "/api/stats/overview", query: [URLQueryItem("vehicle_id", vehicleId), URLQueryItem("range", range)])
     }
+    public static func statsMileage(vehicleId: Int) -> Endpoint<StatsMileage> {
+        Endpoint(.get, "/api/stats/mileage", query: [URLQueryItem("vehicle_id", vehicleId)])
+    }
     public static func dueReminders() -> Endpoint<DueReminders> { Endpoint(.get, "/api/reminders/due") }
 
     // MARK: 邀请

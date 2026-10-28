@@ -176,6 +176,14 @@ public struct Segment: Codable, Sendable, Hashable {
     public var status: String?
     public var tag: String?
     public var explain: Explain?
+    /// 静置段的静置部分；标成静置但有行驶里程时，行驶部分按平时能耗估算后扣掉。
+    public var idleAmount: Double?
+    public var drivePart: Double?
+    public var driveBase100: Double?
+    /// 首页「最近能耗」同区间口径：segment 为综合段，delivery/ledger 为粗略口径。
+    public var scope: String?
+    public var low100: Double?
+    public var high100: Double?
 
     public struct Explain: Codable, Sendable, Hashable {
         public var distance: Double?

@@ -304,7 +304,8 @@ final class RecordFormModel {
             app.toasts.show("已记下开始充电", sub: "拔枪后在首页「充电中」卡片里补结束")
             return
         }
-        let segs = res.segments ?? []
+        let all = res.segments ?? []
+        let segs = all.filter { $0.kind == "drive" }
         let seg = segs.first { $0.energy == "combined" } ?? segs.first { $0.energy == "fuel" } ?? segs.first { $0.energy == "elec" }
         var actions: [ToastAction] = []
         let app = self.app
@@ -313,11 +314,13 @@ final class RecordFormModel {
                 do { _ = try await app.client.send(API.deleteRecord(id: r.id)); app.bump(); app.toasts.show("已撤销") } catch { app.toasts.error(error) }
             })
         }
-        if let elec = segs.first(where: { $0.energy == "elec" }), (elec.distance ?? 99) < 5 || elec.anomaly == "parked", let endId = r.id as Int? {
+        // 只在这段里程基本没动时提示（不足 1km 的段已自动算静置）
+        if all.contains(where: { $0.energy == "elec" && $0.kind == "short" && ($0.distance ?? 99) < 5 }) {
+            let endId = r.id
             actions.append(ToastAction(label: "标记静置") {
                 do {
                     _ = try await app.client.send(try API.markSegment(.init(vehicleId: r.vehicleId, endRecordId: endId, energy: "elec", tag: "idle", excluded: false)))
-                    app.bump(); app.toasts.show("已把这段标记为静置，不计入行驶能耗")
+                    app.bump(); app.toasts.show("已把这段标记为静置", sub: "行驶的几公里按平时电耗估算，其余算静置损耗")
                 } catch { app.toasts.error(error) }
             })
         }

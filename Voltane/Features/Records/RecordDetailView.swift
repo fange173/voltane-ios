@@ -158,8 +158,9 @@ private struct SegmentSection: View {
                     Pill(text: Labels.segmentIssue[s.status ?? ""] ?? "无法计算", tone: .fuel)
                 } else if s.kind == "idle" {
                     HStack(alignment: .firstTextBaseline) {
-                        Text("\(Fmt.num(s.amount)) kWh").font(.title2.bold()).monospacedDigit()
+                        Text("\(Fmt.num(s.idleAmount ?? s.amount)) kWh").font(.title2.bold()).monospacedDigit()
                         Text("\(Fmt.num(s.days, 1)) 天 · \(Fmt.num(s.perDay)) kWh/天").font(.caption).foregroundStyle(.secondary)
+                        HelpTip(text: HelpText.idle)
                     }
                 } else if isComb {
                     HStack(alignment: .firstTextBaseline, spacing: 14) {
@@ -180,13 +181,16 @@ private struct SegmentSection: View {
                           s.elecShare.map { "电能占比 \(Fmt.num($0 * 100, 0))%" }].compactMap { $0 }.joined(separator: "  ·  "))
                         .font(.caption).foregroundStyle(.secondary)
                 }
-                if let parts = s.explain?.parts, !parts.isEmpty { formula(parts, distance: s.distance) }
+                if let parts = s.explain?.parts, !parts.isEmpty { formula(parts, distance: s.kind == "idle" ? nil : s.distance) }
             }
             if canMark, let endId = s.endId {
                 Picker("段标签", selection: $tag) { ForEach(Labels.segmentTagOrder, id: \.self) { Text(Labels.segmentTags[$0] ?? $0).tag($0) } }
                     .onChange(of: tag) { _, new in Task { await mark(endId, new, excluded) } }
-                Toggle("不计入行驶能耗（仍计入综合能耗和花费）", isOn: $excluded)
-                    .onChange(of: excluded) { _, new in Task { await mark(endId, tag, new) } }
+                // 里程几乎没动的段本来就只算静置，「不计入行驶能耗」对它没有意义
+                if !(s.kind == "idle" && (s.distance ?? 0) < 1) {
+                    Toggle(tag == "idle" ? "行驶部分也不计入行驶能耗（仍计入综合能耗）" : "不计入行驶能耗（仍计入综合能耗和花费）", isOn: $excluded)
+                        .onChange(of: excluded) { _, new in Task { await mark(endId, tag, new) } }
+                }
             }
         }
     }
@@ -200,7 +204,7 @@ private struct SegmentSection: View {
                          + (p.k.map { "（每 1% 电量 ≈ \(Fmt.fixed($0, 3)) kWh）" } ?? ""))
                 }
             }
-            Text("÷ \(Fmt.km(distance)) km × 100")
+            if let distance { Text("÷ \(Fmt.km(distance)) km × 100") }
         }
         .font(.system(.caption, design: .monospaced))
         .padding(10).frame(maxWidth: .infinity, alignment: .leading)

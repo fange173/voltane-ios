@@ -80,12 +80,14 @@ private struct HomeContent: View {
 
     private func kpiGrid(_ o: Overview) -> some View {
         let p = o.period, prev = o.prev
+        // 上期里程太少时每公里成本的环比没有参考意义
+        let prevKmOK = (prev?.mileage ?? 0) >= Fmt.minChangeKm
         let cols = [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)]
         return LazyVGrid(columns: cols, spacing: 12) {
             KPICard(label: "里程", systemImage: "road.lanes", value: Fmt.km(p.mileage), unit: "km",
-                    change: Fmt.pctChange(p.mileage, prev?.mileage), neutral: true)
+                    change: Fmt.pctChange(p.mileage, prev?.mileage, min: Fmt.minChangeKm), neutral: true)
             KPICard(label: "总花费", systemImage: "creditcard.fill", value: Fmt.money(p.totalCents, digits: (p.totalCents ?? 0) >= 1_000_000 ? 0 : 2),
-                    unit: "", change: Fmt.pctChange(p.totalCents.map(Double.init), prev?.totalCents.map(Double.init)),
+                    unit: "", change: Fmt.pctChange(p.totalCents.map(Double.init), prev?.totalCents.map(Double.init), min: Fmt.minChangeCents),
                     note: (p.summaryCents ?? 0) > 0 ? "含汇总分摊" : nil)
             if vehicle.hasFuel {
                 KPICard(label: "加油", systemImage: "fuelpump.fill", value: Fmt.num(p.fuelL, 1), unit: "L", tone: .fuel,
@@ -96,9 +98,9 @@ private struct HomeContent: View {
                         note: "\(p.elecCount ?? 0) 次" + (p.homeShare.map { " · 家充 \(Fmt.num($0 * 100, 0))%" } ?? ""))
             }
             KPICard(label: "每公里能源", systemImage: "yensign.circle", value: p.energyCostPerKm.map { "¥" + Fmt.fixed($0) } ?? Fmt.dash, unit: "",
-                    change: Fmt.pctChange(p.energyCostPerKm, prev?.energyCostPerKm))
+                    change: prevKmOK ? Fmt.pctChange(p.energyCostPerKm, prev?.energyCostPerKm) : nil)
             KPICard(label: "每公里总成本", systemImage: "receipt", value: p.totalCostPerKm.map { "¥" + Fmt.fixed($0) } ?? Fmt.dash, unit: "",
-                    change: Fmt.pctChange(p.totalCostPerKm, prev?.totalCostPerKm))
+                    change: prevKmOK ? Fmt.pctChange(p.totalCostPerKm, prev?.totalCostPerKm) : nil, help: HelpText.costPerKm)
         }
     }
 
@@ -169,11 +171,15 @@ private struct KPICard: View {
     var change: Double?
     var neutral = false
     var note: String?
+    var help: String?
 
     var body: some View {
         Card {
             VStack(alignment: .leading, spacing: 6) {
-                Label(label, systemImage: systemImage).font(.caption).foregroundStyle(.secondary)
+                HStack(spacing: 4) {
+                    Label(label, systemImage: systemImage).font(.caption).foregroundStyle(.secondary)
+                    if let help { HelpTip(text: help) }
+                }
                 MetricView(value: value, unit: unit, tone: tone)
                 HStack(spacing: 6) {
                     if let change { ChangeTag(change: change, neutral: neutral) }
@@ -262,17 +268,21 @@ private struct HeroCard: View {
                 }
             }
             if vehicle.hasFuel && vehicle.hasElec {
-                if let c = L.combined, c.quality == "A" {
-                    pair(Big(value: c.per100, unit: "L", tone: .fuel, quality: "A"),
-                         Big(value: c.elecPer100, unit: "kWh", tone: .elec, quality: c.elecQuality == "A" ? "A" : "B"))
+                if let c = L.combined, c.per100 != nil {
+                    // 油电同一区间，主数字是折合油耗
+                    Big(value: c.equivPer100 ?? c.per100, unit: "L", tone: .brand, quality: c.quality, label: "折合油耗")
                     Divider()
                     HStack(alignment: .top, spacing: 0) {
-                        statCell("每公里", c.costPerKm.map { "¥" + Fmt.fixed($0) })
-                        statCell("等效油耗", c.equivPer100.map { Fmt.num($0) + " L" })
+                        statCell("油", Fmt.num(c.per100) + " L" + (c.low100 != nil ? "（\(Fmt.num(c.low100))–\(Fmt.num(c.high100))）" : ""), tone: .fuel)
+                        statCell("电", c.elecPer100.map { Fmt.num($0) + " kWh" }, tone: .elec)
                         statCell("电能占比", c.elecShare.map { Fmt.num($0 * 100, 0) + "%" })
                     }
-                    Text("满到满 \(Fmt.km(c.distance)) km · \(Fmt.date(c.endTs))" + ((overview.sinceLastFull?.km ?? 0) > 0 ? " · 距上次加满已行驶 \(Fmt.km(overview.sinceLastFull?.km)) km" : ""))
-                        .font(.caption).foregroundStyle(.secondary)
+                    HStack(spacing: 4) {
+                        Text(heroScope(c) + (c.costPerKm.map { " · ¥\(Fmt.fixed($0))/km" } ?? ""))
+                        HelpTip(text: HelpText.equiv)
+                    }
+                    .font(.caption).foregroundStyle(.secondary)
+                    if c.quality == "C", let h = L.fuel?.hint { hintLine(Labels.hint[h], kind: .fuel) }
                 } else {
                     let f = L.fuel, e = L.elec
                     pair(Big(value: f?.per100, unit: "L", tone: .fuel, quality: f?.quality, err: f?.err100),
@@ -301,7 +311,7 @@ private struct HeroCard: View {
                 footLine([scopeText(f).isEmpty ? nil : "\(scopeText(f)) \(rangeText(f))", f?.costPerKm.map { "¥\(Fmt.fixed($0))/km" }])
                 if f?.quality == "D" || f?.quality == "C", let h = f?.hint { hintLine(Labels.hint[h], kind: .fuel) }
             }
-            if !(vehicle.hasFuel && vehicle.hasElec && overview.latest.combined?.quality == "A"), let km = overview.sinceLastFull?.km, km > 0 {
+            if !(vehicle.hasFuel && vehicle.hasElec && overview.latest.combined?.scope == "segment"), let km = overview.sinceLastFull?.km, km > 0 {
                 Text("距上次加满已行驶 \(Fmt.km(km)) km").font(.caption).foregroundStyle(.secondary)
             }
         }
@@ -316,12 +326,14 @@ private struct HeroCard: View {
         let tone: Tone
         var quality: String?
         var err: Double?
+        var label: String?
 
         var body: some View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
-                    Image(systemName: tone == .fuel ? "fuelpump.fill" : "bolt.fill").font(.caption).foregroundStyle(tone.color)
-                    Text(tone == .fuel ? "油耗" : "电耗").font(.caption).foregroundStyle(.secondary)
+                    Image(systemName: tone == .fuel ? "fuelpump.fill" : tone == .elec ? "bolt.fill" : "gauge.with.dots.needle.33percent")
+                        .font(.caption).foregroundStyle(tone.color)
+                    Text(label ?? (tone == .fuel ? "油耗" : "电耗")).font(.caption).foregroundStyle(.secondary)
                     QualityBadge(quality: quality, err: err)
                 }
                 HStack(alignment: .firstTextBaseline, spacing: 4) {
@@ -344,12 +356,21 @@ private struct HeroCard: View {
         }
     }
 
-    private func statCell(_ label: String, _ value: String?) -> some View {
+    private func statCell(_ label: String, _ value: String?, tone: Tone? = nil) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(label).font(.caption).foregroundStyle(.secondary)
-            Text(value ?? Fmt.dash).font(.headline).monospacedDigit().lineLimit(1).minimumScaleFactor(0.8)
+            Text(value ?? Fmt.dash).font(.headline).monospacedDigit().lineLimit(1).minimumScaleFactor(0.7)
+                .foregroundStyle(tone?.text ?? .primary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    /// 同网页版 heroCard 的区间说明。
+    private func heroScope(_ c: Segment) -> String {
+        if c.scope == "segment" {
+            return "\(c.quality == "A" ? "满到满" : "油表读数之间") \(Fmt.km(c.distance)) km · \(Fmt.date(c.endTs))"
+        }
+        return "粗略 · \(c.scope == "delivery" ? "提车至今" : "记账以来") \(Fmt.km(c.distance)) km"
     }
 
     private func small(_ label: String, _ value: String) -> some View {
